@@ -1,0 +1,120 @@
+/*
+ * @Author: liweilong
+ * @Date: 2020-11-12 14:27:34
+*/
+$htmlColor:#319595;
+$htmlSupplyColor: #DC3173;
+
+body {
+  // overflow-x: auto;
+  font-family: Microsoft YaHei;
+}
+
+.container {
+  max-width: 1200px !important;
+  width: 1200px;
+}
+
+
+header {
+  width: 100vw;
+
+  .header {
+    height: 62px;
+
+    .row {
+      height: 100%;
+
+      .left_text {
+        color: #666666;
+        font-size: 18px;
+        font-family: Microsoft YaHei;
+      }
+
+      .icon_li {
+        svg {
+          width: 20px;
+          height: 24px;
+        }
+
+        .text_info {
+          color: #333333;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  height: 95px;
+
+  .row {
+    // width: 100%;
+
+    .header_text {
+      width: 220px;
+      font-size: 50px;
+      font-family: YouSheBiaoTiHei;
+      font-weight: 400;
+      color: #319595;
+    }
+
+    .search {
+      width: 540px;
+      height: 47px;
+      border: 3px solid #319595;
+      border-radius: 24px 21px 21px 24px;
+
+      .search_left {
+        width: 130px;
+        height: 100%;
+        background: #319595;
+        border-radius: 24px;
+        font-size: 24px;
+        font-family: SimHei;
+        font-weight: 400;
+        color: #FFFFFF;
+      }
+
+      .search_input {
+        outline: none;
+      }
+
+      .search_icon {
+        svg {
+          width: 23px;
+          height: 23px;
+        }
+      }
+    }
+
+    .pub_wrap {
+      width: 180px;
+      display: block;
+
+      .pub_btn {
+        width: 60px;
+        height: 60px;
+        background: url('../images/bg_need1.png') no-repeat;
+        background-size: cover;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+      }
+
+      .right_pub {
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        color: #FFFFFF;
+        background: url('../images/bg_need.png') no-repeat;
+        background-size: cover;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+    }
+  }
+}
