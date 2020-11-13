@@ -26,5 +26,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@better-scroll/mouse-wheel": "^2.0.5"
+  }
 }

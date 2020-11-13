@@ -10,6 +10,20 @@ class Index {
   init() {
     this.listenSwiperIndex()
     this.listenSwiperPublic()
+    this.listenFwdBtn()
+  }
+
+  // 监听点击忘记密码
+  listenFwdBtn() {
+    // 显示
+    $('.fwd_btn').click(function() {
+      $('.find_passwd').fadeIn()
+    })
+
+    // 隐藏
+    $('.back_wrap').click(function() {
+      $('.find_passwd').fadeOut()
+    })
   }
 
   // 监听轮播图

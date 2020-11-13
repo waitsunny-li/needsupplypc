@@ -16,9 +16,13 @@
   <link rel="stylesheet" href="./css/chat.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./js/tool/swiper.min.css">
+  <link rel="stylesheet" href="./css/verifypic.css">
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/swiper.min.js"></script>
+  <script src="./js/tool/better-scroll.min.js"></script>
+  <script src="./js/tool/mouse-wheel.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
+  <script src="./js/verifypic.min.js"></script>
 
   <!-- 弹框 提示 下拉图片 -->
   <!-- <script src="./js/tool/popper.min.js"></script> -->
@@ -95,7 +99,7 @@
         </div>
         <div class="col mr-1">
           <!-- 搜索 -->
-          <div class="row search">
+          <div class="row search flex-nowrap">
             <div class="search_left text-center">
               搜索网站
             </div>
@@ -148,7 +152,7 @@
 
   <!-- 轮播图begin -->
   <section>
-    <div class="container-fluid index_swiper">
+    <div class="container-fluid index_swiper position-relative">
       <div class="swiper-container swiper_index">
         <div class="swiper-wrapper">
           <div class="swiper-slide">slider1</div>
@@ -158,6 +162,183 @@
 
         <div class="swiper-pagination"></div>
       </div>
+      <div class="right_sign container position-absolute p-0">
+        <div class="sign_login_wrap position-relative w-100 h-100">
+          <div class="trans_buy_used position-absolute bg-white">
+            <div class="tans_tag swiper-pagination ">
+              <div class="buy_wrap">
+                <svg t="1605233606619" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="1994" width="30" height="30">
+                  <path
+                    d="M752.779277 614.774544c22.772498 0 41.198849-18.466262 41.198849-41.195779 0-13.119284-6.122673-24.787464-15.663319-32.329517l0.212856-0.25993c-31.702207-24.541861-66.94621-44.657755-105.004413-59.222002 48.439015-41.559066 79.256028-103.114295 79.256028-171.951647 0-125.12133-101.463639-226.585993-226.585993-226.585993-125.123377 0-226.587016 101.464663-226.587016 226.585993 0 68.837352 30.818036 130.392581 79.257051 171.951647-154.571154 59.301823-264.565398 208.763415-264.646242 384.297793l0 0.079821c0.080844 22.689607 18.507195 41.118004 41.198849 41.118004 22.770451 0 41.116981-18.428398 41.196802-41.118004 0-181.727662 147.894851-329.58158 329.58158-329.58158 74.497474 0 143.081036 25.128238 198.294595 66.945187C731.868244 610.484682 741.817205 614.774544 752.779277 614.774544zM526.193284 454.008059c-79.498561 0-144.190342-64.692805-144.190342-144.192389 0-79.498561 64.693828-144.191366 144.190342-144.191366 79.498561 0 144.191366 64.692805 144.191366 144.191366S605.691845 454.008059 526.193284 454.008059zM909.926191 752.851423 848.129453 752.851423l0-61.798785c0.001023-17.057115-13.839719-30.897857-30.897857-30.897857-17.099073 0-30.897857 13.840742-30.897857 30.897857l0 61.798785-61.796738 0c-17.097026 0-30.896834 13.838695-30.896834 30.897857 0 17.057115 13.799808 30.897857 30.896834 30.897857l61.796738 0 0 61.796738c0 17.059162 13.798785 30.895811 30.897857 30.895811 17.058139 0 30.897857-13.836649 30.897857-30.895811l0-61.796738 61.796738 0c17.058139 0 30.897857-13.840742 30.897857-30.897857C940.824049 766.691142 926.985353 752.851423 909.926191 752.851423z"
+                    p-id="1995" fill="#7F7F7F"></path>
+                </svg>
+                <span class="ml-1">注册账号</span>
+              </div>
+              <div class="used_wrap text-active">
+                <svg t="1605234625092" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="5950" width="30" height="30">
+                  <path
+                    d="M983.531956 312.857903A511.756369 511.756369 0 0 0 138.969483 161.431526a31.992896 31.992896 0 1 0 46.599653 43.840265C271.170129 114.311988 387.054398 64.213112 511.88668 64.213112c246.945168 0 447.900548 200.95538 447.900548 447.900548a445.581063 445.581063 0 0 1-89.780065 268.710335 416.127603 416.127603 0 0 0-56.557442-75.063333 31.992896 31.992896 0 1 0-46.429691 43.990233 351.741899 351.741899 0 0 1 58.117096 82.171754C744.305074 911.135061 633.699633 960.014207 511.88668 960.014207s-232.418394-48.879147-313.250445-128.061565C258.382968 715.018607 380.055952 640.085245 511.88668 640.085245a349.642365 349.642365 0 0 1 186.378617 53.418139 31.992896 31.992896 0 1 0 33.992452-54.217962 415.647709 415.647709 0 0 0-58.836936-30.613202q-14.99667-6.308599-30.243285-11.407467a226.659672 226.659672 0 0 0 26.874033-22.994894 223.670336 223.670336 0 1 0-316.319764 0 226.629679 226.629679 0 0 0 26.904026 22.994894 416.067616 416.067616 0 0 0-226.879623 183.559242A445.581063 445.581063 0 0 1 63.986133 512.11366a452.309569 452.309569 0 0 1 6.998446-79.332385A31.992896 31.992896 0 0 0 7.998564 421.533772 516.475321 516.475321 0 0 0 0.00034 512.11366a512.016311 512.016311 0 0 0 983.531616 199.255757 513.465989 513.465989 0 0 0 0-398.521512zM352.202137 416.134971c0-88.050449 71.634094-159.684543 159.684543-159.684544S671.571224 328.084522 671.571224 416.134971 599.937129 575.819514 511.88668 575.819514 352.202137 504.18542 352.202137 416.134971z"
+                    fill="#7F7F7F" p-id="5951"></path>
+                  <path
+                    d="M53.758404 365.226275a31.992896 31.992896 0 0 0 41.530778-17.996004c2.779383-6.998446 5.768719-13.996892 8.908022-20.915356a448.370443 448.370443 0 0 1 25.844262-48.479236 31.992896 31.992896 0 0 0-54.507897-33.512559A512.636174 512.636174 0 0 0 45.990128 299.790804c-3.579205 7.848257-6.998446 15.89647-10.187738 23.91469a31.992896 31.992896 0 0 0 17.956014 41.520781z"
+                    fill="#7F7F7F" p-id="5952"></path>
+                </svg>
+                <span class="ml-1">账号登录</span>
+              </div>
+            </div>
+
+            <div class="swiper-container sign_login_swiper w-100 h-100">
+              <div class="swiper_wrap swiper-wrapper w-100 h-100">
+                <!-- 注册账号 -->
+                <div class="slide_item swiper-slide w-100 h-100" data-hash="buyrecode">
+                  <form>
+                    <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <input type="text" class=" input_wrap" placeholder="输入手机号" name="siginTel">
+                    </div>
+                    <!-- 验证码 -->
+                    <div class="input-group flex-nowrap justify-content-center  mb-3">
+                      <div class="flex-nowrap justify-content-center row" style="width: 298px;">
+                        <input type="text" class="form-control w-75" placeholder="输入验证码">
+                        <div class="input-group-append" style="width: 98px;">
+                          <span
+                            class="input-group-text text-white pl-1 pr-1 send_sms w-100 d-flex justify-content-center align-items-center"
+                            style="cursor: pointer;border-radius: 0;background: #319595;">发送验证码</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <input type="password" class="input_wrap" placeholder="设置密码" name="siginPassword">
+                    </div>
+                    <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <input type="text" class="input_wrap" placeholder="设置用户名" name="name">
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                      <button type="submit" class="btn btn-p">注册</button>
+                    </div>
+                    <div class="input-group row justify-content-center align-items-center ml-0 mt-3">
+                      <div class="form-check">
+                        <label class="form-check-label align-items-center d-flex"
+                          style="color: #666666;font-size: 12px;">
+                          <input type="checkbox" class="form-check-input" value="">我已阅读并同意《平台免责声明》
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- 账号登录 -->
+                <div class="slide_item swiper-slide w-100 h-100" data-hash="usedrecode">
+                  <form>
+                    <div class="form-group row flex-nowrap justify-content-center mt-5">
+                      <input type="email" class=" input_wrap" id="email" placeholder="输入手机号/用户名 ">
+                    </div>
+                    <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <input type="password" class="input_wrap" placeholder="输入密码" id="pwd">
+                    </div>
+                    <div class="row flex-nowrap justify-content-center verity_pic_btn">
+                      <div class="input_wrap row flex-nowrap align-items-center change_success_wrap"
+                        style="cursor: pointer;">
+                        <div class="change_success">
+                          <div class="circle_wrap position-relative">
+                            <div class="circle position-absolute"></div>
+                          </div>
+                          <svg t="1605260561655" class="icon success_icon" viewBox="0 0 1025 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="14817" width="30" height="30">
+                            <path
+                              d="M461.015563 785.533459c-12.298765 0-24.59878-4.697506-33.978791-14.091267L229.42903 573.863201c-18.750023-18.765023-18.750023-49.17006 0-67.935083 18.745023-18.763773 49.17006-18.763773 67.925083 0l163.66145 163.6727 418.05801-418.10676c18.765023-18.763773 49.18006-18.763773 67.943833 0 18.730023 18.741273 18.730023 49.15631 0 67.925083L494.956854 771.455942C485.586843 780.835953 473.276828 785.533459 461.015563 785.533459L461.015563 785.533459zM512.003125 1024C229.68778 1024 0 794.31722 0 512.004375 0 229.68778 229.68778 0 512.003125 0c100.707623 0 198.193992 29.223786 281.875344 84.511353 16.855021 11.133764 21.485026 33.818791 10.366263 50.673812-11.132514 16.846271-33.818791 21.500026-50.673812 10.366263-71.698838-47.372558-155.23894-72.411338-241.567795-72.411338-241.997795 0-438.861786 196.86524-438.861786 438.863036 0 241.991545 196.86524 438.858036 438.861786 438.858036 241.992795 0 438.858036-196.86649 438.858036-438.858036 0-15.273769-0.776251-30.651287-2.338753-45.713806-2.080003-20.097525 12.528765-38.061296 32.61754-40.131299 20.068774-2.085003 38.061296 12.528765 40.131299 32.61254 1.816252 17.548771 2.730003 35.448793 2.730003 53.232565C1024 794.31722 794.31722 1024 512.003125 1024L512.003125 1024zM512.003125 1024"
+                              p-id="14818" fill="#18A452"></path>
+                          </svg>
+                        </div>
+                        <span class="ml-2 success_text" style="
+                        color: #666666;font-size: 12px">点击按钮进行验证</span>
+                      </div>
+
+
+                    </div>
+                    <div class="row flex-nowrap flex-row-reverse justify-content-center">
+                      <a href="javascript:void(0)" class="mt-1 text-right fwd_btn"
+                        style="width: 298px;color: #666666;font-size:14px">忘记密码</a>
+                    </div>
+                    <div class="row justify-content-center mt-2">
+                      <button type="submit" class="btn btn-p">登录</button>
+                      <button class="btn btn-p mt-2">
+                        <a href="" class="text-white">游客登录</a>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 找回密码 -->
+          <div class="find_passwd position-absolute">
+            <div class="row header_find w-100 ml-0 flex-nowrap align-items-center">
+              <div class="back_wrap col" style="cursor: pointer;">
+                <svg t="1605252647998" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="9299" width="22" height="22">
+                  <path
+                    d="M927.8 478H175.5l219.3-219.3c10.7-10.7 10.7-28.1 0-38.7l-6.5-6.5c-10.7-10.7-28.1-10.7-38.7 0L81.7 481.3c-9.2 4.5-16 13.4-17.6 23.9-1.5 7.1-0.1 14.7 4 21 2.4 4 5.6 7.5 9.4 10.1l0.5 0.5c2.6 2.6 5.6 4.6 8.8 5.9l266.7 266.7c10.7 10.7 28.1 10.7 38.7 0l6.5-6.5c10.7-10.7 10.7-28.1 0-38.7l-222-222.3h751.1c17.6 0 32-14.4 32-32 0-17.5-14.4-31.9-32-31.9z"
+                    fill="#ffffff" p-id="9300"></path>
+                </svg>
+              </div>
+              <div class="col d-flex justify-content-center align-items-center">
+                <svg t="1605252697866" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="9604" width="25" height="25">
+                  <path
+                    d="M251.566 759.85c-16.994 0-30.82-13.572-30.82-30.275V451.64h493.14v77.833a196.856 196.856 0 0 1 46.23 9.612V405.409h-585.6v324.166c0 42.262 34.497 76.504 77.05 76.504h263.418a197.072 197.072 0 0 1-13.699-46.23h-249.72z m446.91-354.441h-46.23v-46.24c0-103.956-86.809-184.92-184.921-184.92-100.534 0-184.921 84.368-184.921 184.92v46.24h-46.23v-46.24c0-126.038 105.112-231.16 231.16-231.16 124.454 0 231.16 100.835 231.16 231.16v46.24z"
+                    p-id="9605" fill="#ffffff"></path>
+                  <path
+                    d="M459.606 528.69h15.42a23.12 23.12 0 0 1 23.11 23.11v107.88a23.129 23.129 0 0 1-23.138 23.119h-15.41a23.12 23.12 0 0 1-23.12-23.12V551.81a23.156 23.156 0 0 1 23.138-23.12z m237.186 31.939c-91.87 0-166.316 74.465-166.316 166.307 0 91.86 74.456 166.315 166.316 166.315 91.85 0 166.315-74.465 166.315-166.315 0-91.842-74.465-166.307-166.315-166.307z m1.702 287.266c-69.632 0-126.075-56.425-126.075-126.075 0-69.623 56.434-126.066 126.075-126.066s126.075 56.434 126.075 126.066c0 69.65-56.434 126.075-126.075 126.075z"
+                    p-id="9606" fill="#ffffff"></path>
+                  <path d="M693.169 778.363h14.91v13.48h-14.91z" p-id="9607" fill="#ffffff"></path>
+                  <path
+                    d="M684.067 769.26h33.114v31.686h-33.114zM705.23 641.42c-27.908-0.464-45.657 13.253-53.212 41.151h12.06c6.618-22.7 20.325-33.814 41.151-33.341 20.335 1.41 31.458 11.824 33.35 31.22 1.42 10.878-6.38 21.764-23.41 32.632-14.664 9.475-21.763 20.826-21.29 34.06v7.091h12.06v-6.38c-0.473-11.824 4.733-21.045 15.61-27.671 21.29-11.35 31.221-25.068 29.801-41.151-2.375-23.648-17.74-36.19-46.12-37.61z"
+                    p-id="9608" fill="#ffffff"></path>
+                  <path
+                    d="M715.042 763.344h-30.265v-16.192c-0.583-16.275 7.973-30.42 25.45-41.707 9.475-6.044 20.47-15.055 19.333-23.802-1.502-15.328-8.957-22.2-24.959-23.32h-0.628c-10.021 0-24.148 2.785-31.148 26.797l-1.911 6.563H640.13l3.113-11.487c8.484-31.321 29.446-47.887 60.63-47.887l1.511 0.009c41.943 2.094 53.048 26.06 55.032 45.802 1.766 20.107-9.876 36.919-34.58 50.099-7.554 4.624-11.14 10.823-10.804 19.27l0.01 15.855z"
+                    p-id="9609" fill="#ffffff"></path>
+                </svg>
+                <span class="text-white ml-1">忘记密码</span>
+              </div>
+              <div class="col"></div>
+            </div>
+
+            <!-- 主体 -->
+            <div class="form_wrap">
+              <form>
+                <div class="form-group row flex-nowrap justify-content-center mt-5">
+                  <input type="text" class=" input_wrap" placeholder="输入手机号" name="siginTel">
+                </div>
+                <!-- 验证码 -->
+                <div class="input-group flex-nowrap justify-content-center mt-4">
+                  <div class="flex-nowrap justify-content-center row" style="width: 298px;">
+                    <input type="text" class="form-control w-75" placeholder="输入验证码">
+                    <div class="input-group-append" style="width: 98px;">
+                      <span
+                        class="input-group-text text-white pl-1 pr-1 send_sms2 w-100 d-flex justify-content-center align-items-center"
+                        style="cursor: pointer;border-radius: 0;background: #319595;">发送验证码</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row flex-nowrap justify-content-center mt-4">
+                  <input type="password" class="input_wrap" placeholder="设置密码" name="siginPassword">
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                  <button type="submit" class="btn btn-p">修改</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+          <!-- 图片验证 -->
+          <div id="slideBar"></div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- 轮播图end -->
@@ -165,7 +346,7 @@
   <!-- 网站公告begin -->
   <section>
     <div class="container mt-4 mb-4 public_swiper">
-      <div class="row">
+      <div class="row flex-nowrap">
         <div class="left_wrap text-center">
           网站公告
         </div>
@@ -206,7 +387,7 @@
     <div class="container supply_need justify-content-between p-0 d-flex">
       <!-- 头目标题 -->
       <div class="supply_wrap wrap">
-        <div class="row justify-content-center pt-3 pb-3 header_title">
+        <div class="row justify-content-center pt-3 pb-3 header_title flex-nowrap align-items-center">
           <svg t="1602987417613" class="icon supply_icon" viewBox="0 0 1024 1024" version="1.1"
             xmlns="http://www.w3.org/2000/svg" p-id="4274" width="30" height="30">
             <path d="M527.1 578.6h32.7v45.1h-32.7z" p-id="4275" fill="#000000"></path>
@@ -214,7 +395,7 @@
               d="M828.9 333.2l-64.8-102.5c-16.5-26.2-44.8-41.7-75.7-41.7H337.6c-30.9 0-59.2 15.6-75.7 41.7l-64.7 102.5c-24.8 39.2-20.4 90.7 10.7 125.3l1.5 1.6c4.9 5.4 10.3 10.2 16 14.4v280.9c0 30.1 26.8 54.4 59.8 54.4h455.7c33.1 0 59.8-24.4 59.8-54.4V473.6c6.2-4.4 12.2-9.3 17.5-15.3 31.1-34.4 35.4-85.9 10.7-125.1z m-369.5 384h-25.9v-98.5c-5.2 9.2-10.7 17.9-16.5 26.4-1.8-11.2-4.6-23.9-8.4-38 15.8-24.6 29-56 39.9-94.3l26.8 7.8c-4.8 15.5-10.1 30.3-15.8 44.5v152.1z m31.2 2.1c-5.8-5.5-12.9-11.7-21.5-18.6 15.1-14.5 28.6-30.2 40.7-47.3l23.8 15.8c-12 16.3-26.4 33-43 50.1z m102.1-0.4c-11.5-16-25.2-32.4-41.1-49.2l21.7-15.4c14.6 14.5 29.3 29.9 43.9 46.2l-24.5 18.4z m25.2-68.1H468.7v-27h29.7v-45.1h-23v-27h23v-38h28.7v38h32.7v-38h28.7v38H612v27h-23.4v45.1h29.3v27z m160.7-228.1c-17.4 19.3-46.3 22.3-67.2 6.8L664 394.3c-24.9-18.5-60.3-15.9-82.3 6.1-32 31.9-82.2 34.2-116.9 5.3l-13.7-11.4c-21.7-18.1-53.1-19.5-76.3-3.5l-60.1 41.4c-20.7 14.2-49 11-65.9-7.9l-1.5-1.6c-15.1-16.9-17.3-42-5.2-61.2L306.8 259c6.7-10.6 18.2-16.9 30.7-16.9h350.8c12.5 0 24 6.3 30.7 16.9l64.7 102.5c12.3 19.2 10.1 44.4-5.1 61.2z"
               p-id="4276" fill="#ffffff"></path>
           </svg>
-          <span class="text_icon text-white">供应信息</span>
+          <span class="text_icon text-white ">供应信息</span>
         </div>
 
         <!-- 搜索 -->
@@ -235,160 +416,162 @@
         </div>
 
         <!-- 主体内容 -->
-        <ul class="goods_ul_content overflow-auto">
-          <!-- 商品 -->
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods1.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
-              </div>
-            </a>
-          </li>
-        </ul>
+        <div class="wrapper supply_wrapper">
+          <ul class="goods_ul_content overflow-auto content">
+            <!-- 商品 -->
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- 需求 -->
       <div class="need_wrap wrap">
         <div class="row justify-content-center pt-3 pb-3 header_title">
           <img src="./images/need_icon.png" alt="">
-          <span class="text_icon text-white">供应信息</span>
+          <span class="text_icon text-white ml-1">供应信息</span>
         </div>
 
         <!-- 搜索 -->
@@ -601,7 +784,7 @@
 
   <!-- 脚部begin -->
   <footer>
-    <div class="footer_top row flex-nowrap container-fluid ml-0 justify-content-center align-items-center" >
+    <div class="footer_top row flex-nowrap container-fluid ml-0 justify-content-center align-items-center">
       供需平台网郑重提醒：商务洽谈过程请小心谨慎，认真核实对方信息，谨防欺诈。
     </div>
     <div class="footer_bottom">
@@ -616,6 +799,82 @@
   <!-- 脚部end -->
 
 </body>
+<script src="./js/common.min.js"></script>
 <script src="./js/index.min.js"></script>
+<script>
+  // 验证码发送
+  function semsCode(times, el) {
+    let timer = null;
+    $(el).click(function () {
+      let allsec = times;
+      if (timer) return;
+      layer.msg('验证码发送成功!', {
+        icon: 1,
+        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+      });
+      // 定时开始计算
+      timer = setInterval(function () {
+        allsec--;
+        $(el).text(allsec + 's');
+        if (allsec <= 0) {
+          clearInterval(timer);
+          $(el).text('发送验证码')
+          semsCode(times);
+        }
+      }, 1000)
+
+    })
+  }
+
+  semsCode(5, '.send_sms');
+  semsCode(10, '.send_sms2')
+
+  // 滚动
+  // 创建better-scroll
+  let supplybs = BetterScroll.createBScroll('.supply_wrapper', {
+    probeType: 2,
+    pullUpLoad: true,
+    click: true,
+    mouseWheel: true
+  })
+  console.log(supplybs);
+  // 监听滚动区域
+  supplybs.on('scroll', function (position) {
+    console.log(position.y);
+  })
+</script>
+
+
+<script type="text/javascript">
+  let isSuccess = false
+
+  $('.verity_pic_btn').click(function () {
+    $('#slideBar').fadeIn()
+  })
+
+  let dataList = ["0", "1"];
+  let options = {
+    dataList: dataList,
+    success: function () {
+      $('#slideBar').fadeOut(2000)
+      // 修改issuccess
+      isSuccess = true
+      $('.circle_wrap').hide()
+      $('.success_icon').show()
+      $('.success_text').text('验证成功')
+      $('.change_success_wrap').css({
+        'border': '1px solid #26C267',
+        'background': '#EEFFF5'
+      })
+      $('.success_text').css({
+        'color': '#18A452'
+      })
+    },
+    fail: function () {
+      isSuccess = false
+    }
+  };
+  SliderBar("slideBar", options);
+</script>
 
 </html>
