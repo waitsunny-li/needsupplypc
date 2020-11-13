@@ -19,14 +19,46 @@
   <link rel="stylesheet" href="./css/verifypic.css">
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/swiper.min.js"></script>
-  <script src="./js/tool/better-scroll.min.js"></script>
-  <script src="./js/tool/mouse-wheel.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
   <script src="./js/verifypic.min.js"></script>
+  <script src="./js/dropLoad.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
 
-  <!-- 弹框 提示 下拉图片 -->
-  <!-- <script src="./js/tool/popper.min.js"></script> -->
-  <!-- <script src="./js/tool/bootstrap4/js/bootstrap.min.js"></script> -->
+  <!-- 供应模板 -->
+  <script type="text/html" id="supply_temp">
+    {{ each dataList }}
+    <li class="goods_li mb-5">
+      <a href="goods_detail.html" class="text-decoration-none">
+        <div class="img_wrap">
+          <img src="./images/goods1.png" alt="">
+        </div>
+        <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+        <div class="date_wrap d-flex align-items-center">
+          <p class="date mb-0">发布日期：2020/07/18</p>
+          <span class="cate ml-1" style="background: #dc3173;">供应</span>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+
+  <!-- 需求模板 -->
+  <script type="text/html" id="need_temp">
+    {{ each dataList }}
+    <li class="goods_li mb-5">
+      <a href="goods_detail.html" class="text-decoration-none">
+        <div class="img_wrap">
+          <img src="./images/goods2.png" alt="">
+        </div>
+        <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+        <div class="date_wrap d-flex align-items-center">
+          <p class="date mb-0">发布日期：2020/07/18</p>
+          <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
   <title>首页</title>
 </head>
 
@@ -385,7 +417,7 @@
   <!-- 供应需求主体begin -->
   <section>
     <div class="container supply_need justify-content-between p-0 d-flex">
-      <!-- 头目标题 -->
+      <!-- 供应 -->
       <div class="supply_wrap wrap">
         <div class="row justify-content-center pt-3 pb-3 header_title flex-nowrap align-items-center">
           <svg t="1602987417613" class="icon supply_icon" viewBox="0 0 1024 1024" version="1.1"
@@ -417,8 +449,80 @@
 
         <!-- 主体内容 -->
         <div class="wrapper supply_wrapper">
-          <ul class="goods_ul_content overflow-auto content">
+          <ul class="goods_ul_content overflow-auto content supply_ul">
             <!-- 商品 -->
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods1.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                </div>
+              </a>
+            </li>
             <li class="goods_li mb-5">
               <a href="goods_detail.html" class="text-decoration-none">
                 <div class="img_wrap">
@@ -571,7 +675,7 @@
       <div class="need_wrap wrap">
         <div class="row justify-content-center pt-3 pb-3 header_title">
           <img src="./images/need_icon.png" alt="">
-          <span class="text_icon text-white ml-1">供应信息</span>
+          <span class="text_icon text-white ml-1">需求信息</span>
         </div>
 
         <!-- 搜索 -->
@@ -592,146 +696,217 @@
         </div>
 
         <!-- 主体内容 -->
-        <ul class="goods_ul_content overflow-auto">
-          <!-- 商品 -->
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
-          <li class="goods_li mb-5">
-            <a href="goods_detail.html" class="text-decoration-none">
-              <div class="img_wrap">
-                <img src="./images/goods2.png" alt="">
-              </div>
-              <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
-              <div class="date_wrap d-flex align-items-center">
-                <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
-              </div>
-            </a>
-          </li>
+        <div class="wrapper need_wrapper">
+          <ul class="goods_ul_content content overflow-auto need_ul">
+            <!-- 商品 -->
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
+            <li class="goods_li mb-5">
+              <a href="goods_detail.html" class="text-decoration-none">
+                <div class="img_wrap">
+                  <img src="./images/goods2.png" alt="">
+                </div>
+                <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+                <div class="date_wrap d-flex align-items-center">
+                  <p class="date mb-0">发布日期：2020/07/18</p>
+                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                </div>
+              </a>
+            </li>
 
-        </ul>
-
-
+          </ul>
+        </div>
       </div>
-
 
     </div>
   </section>
@@ -826,22 +1001,52 @@
     })
   }
 
+  // 
+  function addTemplateData(el, data) {
+    let dataHtml = template(el, {
+      dataList: data
+    })
+    if (el == 'supply_temp') {
+      $('.supply_ul').append(dataHtml)
+      supplyWrapper.refresh()
+      // console.log(supplyWrapper.refresh);
+    } else if (el == 'need_temp') {
+      $('.need_ul').append(dataHtml)
+      needWrapper.refresh()
+    } else {
+      throw Error('请添加有效的模板id')
+    }
+  }
+
+
   semsCode(5, '.send_sms');
   semsCode(10, '.send_sms2')
 
   // 滚动
-  // 创建better-scroll
-  let supplybs = BetterScroll.createBScroll('.supply_wrapper', {
-    probeType: 2,
-    pullUpLoad: true,
-    click: true,
-    mouseWheel: true
+  let supplyWrapper = new Dropload({
+    el: '.supply_wrapper',
+    distanceEnd: 500,
+    success: function () {
+      console.log('供应一倒头');
+      setTimeout(function () {
+        let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+        addTemplateData('supply_temp', data)
+      }, 1000)
+    }
   })
-  console.log(supplybs);
-  // 监听滚动区域
-  supplybs.on('scroll', function (position) {
-    console.log(position.y);
+
+  let needWrapper = new Dropload({
+    el: '.need_wrapper',
+    distanceEnd: 500,
+    success: function () {
+      console.log('需求一倒头');
+      setTimeout(function () {
+        let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+        addTemplateData('need_temp', data)
+      }, 1000)
+    }
   })
+
 </script>
 
 

@@ -11,6 +11,7 @@ class Dropload {
   constructor(options) {
     // 初始化位置
     // this._initDistance = 0
+    this.wrapper = options.el == 'window' ? 'window' : document.querySelector(options.el)
     // 窗口高度
     this._windowHeight = 0
     // container高度
@@ -42,23 +43,29 @@ class Dropload {
   // 初始化窗口高度
   initWindoHeight() {
     let wHeight = 0
-    if (document.body.clientHeight && document.documentElement.clientHeight) {
-      wHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    if (this.wrapper == 'window') {
+      if (document.body.clientHeight && document.documentElement.clientHeight) {
+        wHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+      } else {
+        wHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+      }
     } else {
-      wHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+      this.wrapper.style.overflowY = 'auto'
+      this.wrapper.style.overflowX = 'hidden'
+
+      wHeight = this.wrapper.offsetHeight 
     }
-    // console.log('浏览器窗口高度', wHeight)
     return wHeight;
   }
 
   // 初始化container高度
   initContainerHeight() {
-    let container_el = document.querySelector('.container')
+    let container_el = this.wrapper.querySelector('.content')
     let offsetH = 0
     try {
       offsetH = container_el.offsetHeight
     } catch (err) {
-      throw new Error("请添加添加类为container的容器！")
+      throw new Error("请添加添加类为content的容器！")
     }
     // console.log('container高度', offsetH)
     return offsetH
@@ -68,15 +75,14 @@ class Dropload {
   refresh() {
     this.init()
     this._isScrollB = false
+    console.log(this._containerHeight);
   }
 
   // 监听滚动条滚动
   listenWindowScroll() {
     let self = this;
-    window.addEventListener('scroll', () => {
-      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      // console.log(scrollTop)
-
+    self.wrapper.addEventListener('scroll', function() {
+      let scrollTop = this.scrollTop || this.scrollTop;
       if (scrollTop + self._windowHeight >= self._containerHeight - self._distanceEnd) {
         if (!self._isScrollB) {
           // 触底时 触发
@@ -91,7 +97,6 @@ class Dropload {
   listenResize() {
     window.addEventListener('resize', () => {
       this.init()
-    }) 
+    })
   }
 }
-

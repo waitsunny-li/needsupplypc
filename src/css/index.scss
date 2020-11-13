@@ -244,6 +244,7 @@
           }
         }
       }
+
       // 图片验证
       #slideBar {
         display: none;
@@ -380,96 +381,100 @@
       color: #000000;
     }
 
-    .goods_ul_content::-webkit-scrollbar {
+    .wrapper::-webkit-scrollbar {
       width: 22px;
       height: 1px;
     }
 
-    .goods_ul_content::-webkit-scrollbar-thumb {
+    .wrapper::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background: $htmlSupplyColor;
     }
 
-    .goods_ul_content::-webkit-scrollbar-track {
+    .wrapper::-webkit-scrollbar-track {
       /*滚动条里面轨道*/
       border-radius: 10px;
       background: #EEEEEE;
     }
 
-    .goods_ul_content {
+    .wrapper {
       width: 565px;
       height: 800px;
       border-radius: 12px;
       padding: 10px 20px;
       box-sizing: border-box;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
 
-      .goods_li {
-        width: 230px;
-        margin-bottom: 15px;
+      .goods_ul_content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-        .img_wrap {
-          width: 100%;
-          height: 145px;
-          overflow: hidden;
-          border-radius: 12px;
-          box-shadow: 0 0 8px rgba(4, 0, 0, 0.2);
+        .goods_li {
+          width: 230px;
+          margin-bottom: 15px;
 
-          img {
+          .img_wrap {
             width: 100%;
             height: 145px;
-            object-fit: cover;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(4, 0, 0, 0.2);
+
+            img {
+              width: 100%;
+              height: 145px;
+              object-fit: cover;
+            }
           }
-        }
 
-        .goods_name {
-          width: 100%;
-          font-size: 19px;
-          letter-spacing: 1px;
-          font-family: PingFang;
-          font-weight: 400;
-          color: #333333;
-        }
-
-        .date_wrap {
-          width: 100%;
-
-          .date {
-            font-size: 16px;
+          .goods_name {
+            width: 100%;
+            font-size: 19px;
+            letter-spacing: 1px;
+            font-family: PingFang;
             font-weight: 400;
-            color: #666666;
+            color: #333333;
           }
 
-          .cate {
-            width: 45px;
-            height: 18px;
-            background: $htmlSupplyColor;
-            border-radius: 10px;
-            font-size: 11px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
+          .date_wrap {
+            width: 100%;
+
+            .date {
+              font-size: 16px;
+              font-weight: 400;
+              color: #666666;
+            }
+
+            .cate {
+              width: 45px;
+              height: 18px;
+              background: $htmlSupplyColor;
+              border-radius: 10px;
+              font-size: 11px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #ffffff;
+            }
           }
         }
       }
     }
+
   }
 
   .need_wrap {
-    .goods_ul_content::-webkit-scrollbar {
+    .need_wrapper::-webkit-scrollbar {
       width: 22px;
       height: 1px;
     }
 
-    .goods_ul_content::-webkit-scrollbar-thumb {
+    .need_wrapper::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background: $htmlNeedColr;
     }
 
-    .goods_ul_content::-webkit-scrollbar-track {
+    .need_wrapper::-webkit-scrollbar-track {
       /*滚动条里面轨道*/
       border-radius: 10px;
       background: #EEEEEE;
