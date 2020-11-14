@@ -1,0 +1,139 @@
+/*
+ * @Author: liweilong
+ * @Date: 2020-11-12 13:39:57
+ */
+@import './header.scss';
+
+
+.bread_wrap {
+  .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: ">";
+  }
+
+  .breadcrumb-item {
+    a {
+      color: #333333;
+    }
+  }
+}
+
+// 发布主体
+.publish_body {
+
+  .form-group {
+    width: 530px;
+
+    label {
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    .form-control {
+      width: 463px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    .textarea-control {
+      width: 463px;
+      min-height: 60px;
+      max-height: 120px;
+      background: #FFFFFF;
+      border: 1px solid #CCCCCC;
+    }
+
+    .loca {
+      width: 463px;
+      height: 40px;
+
+      .select_wrap_location {
+        width: 138px;
+        height: 32px;
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+        line-height: 32px;
+        font-size: 14px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #333333;
+      }
+    }
+
+    // 上传图片
+    .pic_group {
+      width: 463px;
+
+      .pic_wrap {
+        width: 87px;
+        height: 87px;
+        background-color: #EEEEEE;
+
+        img {
+          width: 87px;
+          height: 87px;
+          object-fit: cover;
+        }
+      }
+
+      .pic_upload {
+        width: 60px;
+        height: 32px;
+        border: 1px solid #319595;
+        border-radius: 3px;
+        font-size: 16px;
+        font-family: Adobe Heiti Std;
+        font-weight: normal;
+
+        button {
+          color: #319595;
+        }
+      }
+    }
+  }
+
+  // 上传
+  .submit_btn {
+    width: 120px;
+    height: 36px;
+    background: #319595;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    margin-left: 65px;
+  }
+}
+
+// 腳部
+footer {
+  height: 168px;
+  background-color: #D9D9D9;
+
+  .footer_top {
+    height: 65px;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #333333;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .footer_bottom {
+    color: #333333;
+    font-size: 18px;
+  }
+}
+
+.footer_fixed {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

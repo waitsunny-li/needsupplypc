@@ -23,8 +23,9 @@ header {
   .header {
     height: 62px;
 
-    .row {
+    .header_b {
       height: 100%;
+      line-height: 62px;
 
       .left_text {
         color: #666666;
@@ -48,9 +49,10 @@ header {
 }
 
 .nav {
+  width: 100vw;
   height: 95px;
 
-  .row {
+  .nav_row {
     // width: 100%;
 
     .header_text {
@@ -119,6 +121,33 @@ header {
         font-weight: bold;
         border-radius: 10px;
       }
+    }
+  }
+}
+
+.display_none_nav {
+  width: 100vw;
+  top: -100px;
+  z-index: 2000;
+  transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+.location_change_wrap {
+  width: 430px;
+  height: 100px;
+  display: none;
+
+  select {
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+
+    option {
+      border: none;
     }
   }
 }

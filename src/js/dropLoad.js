@@ -67,7 +67,7 @@ class Dropload {
     } catch (err) {
       throw new Error("请添加添加类为content的容器！")
     }
-    // console.log('container高度', offsetH)
+ 
     return offsetH
   }
 
@@ -75,7 +75,6 @@ class Dropload {
   refresh() {
     this.init()
     this._isScrollB = false
-    console.log(this._containerHeight);
   }
 
   // 监听滚动条滚动

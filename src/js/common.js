@@ -6,9 +6,11 @@ class Common {
   constructor() {
     this.mySwiper = null
 
-    this.BuyClick()
-    this.UsedClick()
-    this.listanBaner()
+    if (window.Swiper) {
+      this.BuyClick()
+      this.UsedClick()
+      this.listanBaner()
+    }
     this.listenBackTop()
   }
 
@@ -86,6 +88,16 @@ class Common {
     self.createBackTop()
     $(document).scroll(function () {
       let scroH = $(document).scrollTop(); //滚动高度
+      if (scroH > 160) {
+        $('.display_none_nav').css({
+          'top': '0'
+        })
+      } else {
+        $('.display_none_nav').css({
+          'top': '-100px'
+        })
+      }
+
       if (scroH >= 700) {
         $('.back_top').css({
           'bottom': '170px'

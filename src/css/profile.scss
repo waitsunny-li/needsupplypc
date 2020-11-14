@@ -1,0 +1,51 @@
+/*
+ * @Author: liweilong
+ * @Date: 2020-11-12 13:39:57
+ */
+@import './header.scss';
+
+
+.bread_wrap {
+  .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: ">";
+  }
+
+  .breadcrumb-item {
+    a {
+      color: #333333;
+    }
+  }
+}
+
+// 个人中心主体
+
+
+// 腳部
+footer {
+  height: 168px;
+  background-color: #D9D9D9;
+
+  .footer_top {
+    height: 65px;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #333333;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .footer_bottom {
+    color: #333333;
+    font-size: 18px;
+  }
+}
+
+.footer_fixed {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
