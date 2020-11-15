@@ -5,11 +5,17 @@
 class Common {
   constructor() {
     this.mySwiper = null
+    this.currentActiveIndex = 0
+    this.proUl = $('.profileulli')
+    this.proLi = $('.profileulli').find('li')
 
     if (window.Swiper) {
       this.BuyClick()
       this.UsedClick()
       this.listanBaner()
+    }
+    if (this.proUl.length) {
+      this.listenProfileUlLi()
     }
     this.listenBackTop()
   }
@@ -118,6 +124,32 @@ class Common {
     })
   }
 
+  // 个人主页等界面左边选择导航
+  listenProfileUlLi() {
+    let self = this
+    self.currentActiveIndex = self.returnLiIndex()
+    console.log(self.currentActiveIndex);
+
+    // 
+    self.proLi.hover(function() {
+      self.proLi.removeClass('active')
+      $(this).addClass('active')
+    }, function() {
+      self.proLi.removeClass('active')
+      self.proLi.eq(self.currentActiveIndex).addClass('active')
+    })
+  }
+
+  // 查看初始化的包含active类的li标签(返回index)
+  returnLiIndex() {
+    let liLen = this.proLi.length
+    for (let i = 0; i < liLen; i++) {
+      console.log();
+      if (this.proLi.eq(i).attr('class').indexOf('active') != '-1') {
+        return i
+      }
+    }
+  }
 }
 
 new Common()
