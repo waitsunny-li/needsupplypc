@@ -18,6 +18,7 @@ class Common {
       this.listenProfileUlLi()
     }
     this.listenBackTop()
+    this.topConfig()
   }
 
   // 登录注册
@@ -41,6 +42,24 @@ class Common {
         }
       }
     })
+  }
+
+  // 顶部进度的配置
+  topConfig() {
+    if (window.topbar) {
+      //  顶部加载进度条
+      topbar.config({
+        barThickness: 5,
+        barColors: {
+          '0': '#4cd964',
+          '.2': '#5ac8fa',
+          '.4': '#007aff',
+          '.6': '#34aadc',
+          '.8': '#5856d6',
+          '1.0': '#ff2d55'
+        },
+      })
+    }
   }
 
   // 定义点击注册账号函数
@@ -131,10 +150,10 @@ class Common {
     console.log(self.currentActiveIndex);
 
     // 
-    self.proLi.hover(function() {
+    self.proLi.hover(function () {
       self.proLi.removeClass('active')
       $(this).addClass('active')
-    }, function() {
+    }, function () {
       self.proLi.removeClass('active')
       self.proLi.eq(self.currentActiveIndex).addClass('active')
     })

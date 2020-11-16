@@ -19,11 +19,34 @@
   <script src="./js/tool/funlazy.min.js"></script>
   <script src="./js/location.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
-
+  <script src="./js/tool/topbar.min.js"></script>
+  <script src="./js/dropLoad.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
 
   <script src="./js/pcasunzip.min.js"></script>
 
-  <title>个人中心</title>
+  <script type="text/html" id="data_tep">
+    {{each dataList}}
+    <li class="goods_li mb-5">
+      <div class="img_wrap">
+        <a class="w-100 h-100" href="">
+          <img data-funlazy="./images/goods1.png" alt="">
+        </a>
+      </div>
+      <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+          安费诺安全插座插线板750度高温打发顺丰打发顺丰...
+        </a></p>
+      <div class="date_wrap d-flex align-items-center">
+        <p class="date mb-0">发布日期：2020/07/18</p>
+        <span class="cate ml-2" style="background: #dc3173;">供应</span>
+        <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+        <span class="ml-1 edit_del del_btn">删除</span>
+      </div>
+    </li>
+    {{/each}}
+  </script>
+
+  <title>我的发布</title>
 </head>
 
 <body class="body">
@@ -142,7 +165,7 @@
           </div>
         </a>
       </div>
-    </div> ·
+    </div>
   </nav>
   <!-- 导航条end -->
 
@@ -252,7 +275,7 @@
           </li>
           <!-- 我的消息 -->
           <li class="w-100">
-            <a href="mypublish.html"
+            <a href="mynotice.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" p-id="7537" width="20" height="20">
@@ -349,8 +372,8 @@
           我的发布
         </div>
         <!-- 发布的内容 -->
-        <div class="pub_wrapper wrapper">
-          <ul class="goods_ul_content overflow-auto content supply_ul mt-4">
+        <div class="pub_wrapper wrapper overflow-auto pr-4 mt-3">
+          <ul class="goods_ul_content overflow-auto content supply_ul ">
             <li class="goods_li mb-5">
               <div class="img_wrap">
                 <a class="w-100 h-100" href="">
@@ -358,11 +381,13 @@
                 </a>
               </div>
               <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
-                安费诺安全插座插线板750度高温打发顺丰打发顺丰...
-              </a></p>
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰...
+                </a></p>
               <div class="date_wrap d-flex align-items-center">
                 <p class="date mb-0">发布日期：2020/07/18</p>
-                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <span class="cate ml-2" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
               </div>
             </li>
 
@@ -373,11 +398,217 @@
                 </a>
               </div>
               <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
-                安费诺安全插座插线板750度高温打发顺丰打发顺丰
-              </a></p>
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
               <div class="date_wrap d-flex align-items-center">
                 <p class="date mb-0">发布日期：2020/07/18</p>
                 <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="#" class="edit_del ml-1 text-decoration-none">编辑</a>
+                <span class="ml-1 edit_del del_btn">删除</span>
               </div>
             </li>
           </ul>
@@ -487,8 +718,7 @@
   function lazyPic() {
     FunLazy({
       onSuccess: function (el, img) {
-        supplyWrapper.refresh()
-        needWrapper.refresh()
+        dataWrapper.refresh()
       }
     })
   }
@@ -497,6 +727,8 @@
   $('.pic_upload_btn').change(function (e) {
     addImg('./images/goods1.png')
   })
+
+
 
   // 初始化位置
   function initArea() {
@@ -548,6 +780,15 @@
     })
   }
 
+  // 模板
+  function addTemplateData(el, data) {
+    let dataHtml = template(el, {
+      dataList: data
+    })
+    $('.goods_ul_content').append(dataHtml)
+    lazyPic()
+  }
+
   // 自动定位
   autoGetLocation()
 
@@ -555,6 +796,21 @@
   initArea()
 
   lazyPic()
+
+
+  // 数据滚动底部
+  let dataWrapper = new Dropload({
+    el: '.pub_wrapper',
+    distanceEnd: 500,
+    success: function () {
+      topbar.show()
+      setTimeout(function () {
+        let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+        addTemplateData('data_tep', data)
+        topbar.hide()
+      }, 1000)
+    }
+  })
 
 </script>
 

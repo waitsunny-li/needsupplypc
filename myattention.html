@@ -1,6 +1,6 @@
 <!--
  * @Author: liweilong
- * @Date: 2020-11-12 13:50:30
+ * @Date: 2020-11-16 15:05:37
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./js/tool/bootstrap4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./js/tool/layer/theme/default/layer.css">
   <link rel="stylesheet" href="./css/profile.css">
-  <link rel="stylesheet" href="./css/chat.css">
+
   <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/funlazy.min.js"></script>
@@ -27,66 +27,25 @@
 
   <script type="text/html" id="data_tep">
     {{each dataList}}
-    <li class="notice_li w-100">
-      <a href="javascript:void(0)" class="text-decoration-none">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img data-funlazy="./images/touxiang.png" alt="">
-            <span class="dot">3</span>
-          </div>
-          <div class="n_con d-flex flex-column justify-content-center ml-3">
-            <p class="username font-weight-bold mb-0">千纸鹤~</p>
-            <p class="notice_desc mb-0 mt-1">
-              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-            </p>
-          </div>
-          <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-            人民币,美元等的对方水电费水电费第三方的
-          </div>
-        </div>
-
-
-        <!-- 时间 -->
-        <div class="date">
-          09:17
-        </div>
-      </a>
+    <li class="publish_li">
+      <div class="left_wrap">
+        <img data-funlazy="./images/touxiang.png" alt="">
+        <span class="name ml-2">千纸鹤</span>
+      </div>
+      <div class="right_wrap">
+        <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+          <path
+            d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+            fill="#333333" p-id="6435"></path>
+        </svg>
+        <span class="t">已关注</span>
+      </div>
     </li>
     {{/each}}
   </script>
 
-  <!-- 自己发送的聊天模板 -->
-  <script type="text/html" id="chat_mine_data">
-    <li class="chat_li_mine">
-      <div class="avatar_wrap">
-        <div class="ava_img">
-          <img src="{{mine_image_src}}"
-            alt="">
-        </div>
-      </div>
-      <div class="chat_content">
-        <div class="chat_inner_content">
-          {{chat_content}}
-        </div>
-      </div>
-    </li>
-  </script>
-
-  <style>
-    .layui-layer-page .layui-layer-content {
-      overflow: hidden;
-    }
-
-    .layui-layer-title {
-      text-align: center;
-      padding-left: 80px;
-      height: 60px;
-      line-height: 60px;
-      font-size: 17px;
-      font-weight: 600;
-    }
-  </style>
-  <title>我的消息</title>
+  <title>我的关注</title>
 </head>
 
 <body class="body">
@@ -295,7 +254,7 @@
             </a>
           </li>
           <!-- 我的发布 -->
-          <li class="w-100">
+          <li class="w-100 ">
             <a href="mypublish.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1603172715971" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -314,7 +273,7 @@
             </a>
           </li>
           <!-- 我的消息 -->
-          <li class="w-100 active">
+          <li class="w-100">
             <a href="mynotice.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -349,7 +308,7 @@
             </a>
           </li>
           <!-- 我的关注 -->
-          <li class="w-100">
+          <li class="w-100 active">
             <a href="myattention.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1603333915422" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -408,352 +367,350 @@
       </div>
       <!-- 中间的条目 -->
       <div class="content_item pl-4 pr-4 shadow-sm bg-white">
-        <div class="w-100 content_header font-weight-bold pt-3 pb-3 d-flex align-items-center">
-          <span>我的消息</span>
-          <!-- 搜索 -->
-          <div class="d-flex search flex-nowrap ml-4">
-            <div class="search_left text-center">
-              搜索消息
-            </div>
-            <input class="col search_input border-0" type="text">
-            <div class="mr-4 search_icon d-flex align-items-center search_notice_btn">
-              <svg t="1605165509810" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="12750" width="20" height="20">
-                <path
-                  d="M798.386532 434.840666c0 90.322122-32.875059 173.048241-87.325366 236.740866 0 0 195.358181 195.621353 232.072842 231.577263 30.171373 29.522384-4.434167 75.370595-43.419638 33.901111-23.467419-24.980951-228.233239-225.844701-228.233239-225.844701-63.803709 54.933123-146.802359 88.132246-237.587665 88.132246-201.30588 0-364.492043-163.235758-364.492043-364.506784 0-201.271026 163.186162-364.477109 364.492043-364.477109C635.200369 70.363558 798.386532 233.56964 798.386532 434.840666zM433.893466 128.136356c-169.349788 0-306.69027 137.333832-306.69027 306.676681 0 169.398108 137.340482 306.732963 306.69027 306.732963 169.404026 0 306.744508-137.334855 306.744508-306.732963C740.637974 265.470187 603.297491 128.136356 433.893466 128.136356z"
-                  p-id="12751" fill="#666666"></path>
-              </svg>
-            </div>
-          </div>
+        <div class="w-100 content_header font-weight-bold pt-3 pb-3">
+          我的关注
         </div>
-        <!-- 消息内容 -->
-        <div class="notice_wrapper wrapper overflow-auto pr-4 mt-3">
-          <ul class="notice_ul w-100 content">
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+        <div class="fans w-100 rounded " style="background-color: #319595;height: 35px;">
+          <a class="text-decoration-none text-white w-100 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0)" style="
+          font-size: 18px;
+          font-family: SimHei;
+          font-weight: 400;
+          color: #FFFFFF;">
+            我的粉丝
+          </a>
+        </div>
+        <!-- 关注的内容 -->
+        <div class="pub_wrapper wrapper overflow-auto pr-4 mt-3"  style="height: 630px;">
+          <ul class="publish_ul content d-flex flex-wrap justify-content-around">
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
-
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
+            </li>
+            <li class="publish_li">
+              <div class="left_wrap">
+                <img src="./images/touxiang.png" alt="">
+                <span class="name ml-2">千纸鹤</span>
+              </div>
+              <div class="right_wrap">
+                <svg t="1603357628331" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="6434" width="35" height="35">
+                  <path
+                    d="M501.504 170.666667c182.741333 0 330.816 148.117333 330.816 330.837333 0 182.741333-148.117333 330.816-330.816 330.816C318.72 832.32 170.666667 684.202667 170.666667 501.504 170.666667 318.72 318.784 170.666667 501.504 170.666667z m0 42.666666C342.336 213.333333 213.333333 342.314667 213.333333 501.504c0 159.146667 128.981333 288.149333 288.170667 288.149333 159.146667 0 288.149333-128.981333 288.149333-288.149333C789.653333 342.336 660.693333 213.333333 501.504 213.333333z m144.064 150.549334a25.152 25.152 0 0 1 36.053333 35.050666l-218.666666 224.896a25.152 25.152 0 0 1-35.242667 0.789334l-106.197333-99.968a25.152 25.152 0 1 1 34.453333-36.608l88.405333 83.2 201.194667-207.36z"
+                    fill="#333333" p-id="6435"></path>
+                </svg>
+                <span class="t">已关注</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -836,98 +793,6 @@
     <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_locat">切换</btn>
   </div>
 </div>
-
-<!-- 聊天框 -->
-<div class="chat_wrap">
-  <div class="chat_content_wrap">
-    <ul class="chat_ul">
-      <li class="chat_li">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img src="./images/touxiang1.jpeg" alt="">
-          </div>
-        </div>
-        <div class="chat_content">
-          <div class="chat_inner_content">
-            你好！
-          </div>
-        </div>
-      </li>
-
-      <li class="chat_li_mine">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
-              alt="">
-          </div>
-        </div>
-        <div class="chat_content">
-          <div class="chat_inner_content">
-            你好！
-          </div>
-        </div>
-      </li>
-
-      <li class="chat_li">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img src="./images/touxiang1.jpeg" alt="">
-          </div>
-        </div>
-        <div class="chat_content">
-          <div class="chat_inner_content">
-            请问，你想了解我的需求项目吗？如果想的话，请打我这个电话，我们详细聊，电话：15888888888
-          </div>
-        </div>
-      </li>
-      <li class="chat_li_mine">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
-              alt="">
-          </div>
-        </div>
-        <div class="chat_content">
-          <div class="chat_inner_content">
-            你好！
-          </div>
-        </div>
-      </li>
-      <li class="chat_li_mine">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
-              alt="">
-          </div>
-        </div>
-        <div class="chat_content">
-          <div class="chat_inner_content">
-            你好！
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="bottom_write">
-    <div class="func_group">
-      <div class="icon_wrap">
-        <input type="file" hidden class="file_input">
-        <svg t="1604559451101" class="icon pic_btn" viewBox="0 0 1024 1024" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" p-id="3037" width="30" height="30">
-          <path
-            d="M856.32 428.064c-94.816 0-144.928 90.656-185.184 163.52-25.824 46.688-52.512 94.944-78.72 97.568-28.544-5.664-48.096-23.2-70.656-43.36-31.744-28.448-67.488-60.288-130.464-57.952-76.8 3.328-146.24 57.696-206.4 161.696a32 32 0 0 0 55.392 32.064c48.48-83.84 100.224-127.488 153.728-129.824 36.928-1.44 56.96 16.576 84.992 41.664 26.88 24.096 57.344 51.36 105.888 59.392a31.584 31.584 0 0 0 5.216 0.448c64.704 0 101.44-66.464 136.96-130.72 28.352-51.328 57.504-104 97.184-123.072v369.984H128V231.68h488.16a32 32 0 1 0 0-64H96a32 32 0 0 0-32 32v701.824a32 32 0 0 0 32 32h760.32a32 32 0 0 0 32-32v-441.44a32 32 0 0 0-32-32z m-675.36-3.744c0 57.952 47.168 105.12 105.12 105.12S391.2 482.272 391.2 424.32s-47.168-105.088-105.12-105.088-105.12 47.136-105.12 105.088z m146.24 0a41.152 41.152 0 0 1-82.24 0 41.152 41.152 0 0 1 82.24 0zM960 174.656h-61.376V113.28a32 32 0 1 0-64 0v61.344H752.64a32 32 0 1 0 0 64h81.984v81.984a32 32 0 1 0 64 0v-81.952H960a32 32 0 1 0 0-64z"
-            p-id="3038" fill="#8a8a8a"></path>
-        </svg>
-      </div>
-    </div>
-    <div class="write_input position-relative">
-      <textarea class="chat_textarea" name="content" id=""></textarea>
-      <button class="btn close_btn position-absolute text-white p-0">关闭</button>
-      <button class="btn chat_submit_btn position-absolute text-white p-0">发送</button>
-    </div>
-  </div>
-</div>
-
 <script src="./js/common.min.js"></script>
 <script>
   // 上传图片
@@ -1011,8 +876,6 @@
     ll.getLoaction(function (res) {
       let { ad_info } = res.result
       $('.header_lo_text').text(ad_info.city)
-      // $('#p_province').val(ad_info.city)
-
     })
   }
 
@@ -1021,7 +884,7 @@
     let dataHtml = template(el, {
       dataList: data
     })
-    $('.notice_ul').append(dataHtml)
+    $('.publish_ul').append(dataHtml)
     lazyPic()
   }
 
@@ -1035,23 +898,20 @@
 
   // 数据滚动底部
   let dataWrapper = new Dropload({
-    el: '.notice_wrapper',
+    el: '.pub_wrapper',
     distanceEnd: 500,
     success: function () {
       topbar.show()
       setTimeout(function () {
-        let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+        let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
         addTemplateData('data_tep', data)
         topbar.hide()
-
-        listenClickDisplayChat()
       }, 1000)
     }
   })
 
 </script>
 
-<!-- 动态的控制脚部 -->
 <script>
   function changeFooter() {
     let wh = $(window).height()
@@ -1069,91 +929,6 @@
   $(window).resize(function () {
     changeFooter()
   })
-</script>
-
-<!-- 聊天设置 -->
-<script>
-  var chat;
-  function listenClickDisplayChat() {
-    let noticeLis = $('.notice_ul').find('li')
-    noticeLis.click(function () {
-      // 显示tobar
-      topbar.show()
-      // 发送请求
-      setTimeout(() => {
-        chat = layer.open({
-          id: 'chat',
-          type: 1,
-          title: '千纸鹤~',
-          skin: '.chat_wrap', //样式类名
-          closeBtn: 1, //不显示关闭按钮
-          anim: 0,
-          // shade: 0,
-          resize: false,
-          area: ['600px', '600px'],
-          shadeClose: true, //开启遮罩关闭
-          content: $('.chat_wrap')
-        });
-        // 关闭进度
-        topbar.hide()
-      }, 500)
-    })
-  }
-
-  // 聊天模板 第二个参数
-  function chatTemplate(content, ava_img) {
-    let dataHtml = template('chat_mine_data', {
-      mine_image_src: ava_img,
-      chat_content: content
-    })
-    $('.chat_ul').append(dataHtml)
-    $('.chat_textarea').val('')
-  }
-  // 监听点击发送按钮
-  function listenChatBtn() {
-    $('.chat_submit_btn').click(function () {
-      let chat_content = $('.chat_textarea').val()
-      chatTemplate(chat_content, './images/touxiang.png')
-    })
-  }
-
-  // 关闭聊天框
-  function closeChat() {
-    $('.close_btn').click(function () {
-      layer.closeAll('page')
-    })
-  }
-  // 监听点击显示弹出聊天框
-  listenClickDisplayChat()
-
-  // 监听点击发送
-  listenChatBtn()
-
-  $('.btn').click(function () {
-
-    // setTimeout(() => {
-    //   layer.title('hhh', h)
-    // }, 1000)
-  })
-
-  $('.chat_textarea').focus(function () {
-    console.log('jjj');
-
-  })
-
-  closeChat()
-
-  // 图片发送
-  $('.pic_btn').click(function () {
-    $('.file_input').click()
-  })
-
-  $('.file_input').change(function () {
-    let file = document.getElementsByClassName('file_input')[0]
-    console.log(file.files);
-    console.log($(this));
-  })
-
 </script>
 
 </html>

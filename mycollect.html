@@ -1,6 +1,6 @@
 <!--
  * @Author: liweilong
- * @Date: 2020-11-12 13:50:30
+ * @Date: 2020-11-16 14:31:50
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -27,30 +27,21 @@
 
   <script type="text/html" id="data_tep">
     {{each dataList}}
-    <li class="notice_li w-100">
-      <a href="javascript:void(0)" class="text-decoration-none">
-        <div class="avatar_wrap">
-          <div class="ava_img">
-            <img data-funlazy="./images/touxiang.png" alt="">
-            <span class="dot">3</span>
-          </div>
-          <div class="n_con d-flex flex-column justify-content-center ml-3">
-            <p class="username font-weight-bold mb-0">千纸鹤~</p>
-            <p class="notice_desc mb-0 mt-1">
-              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-            </p>
-          </div>
-          <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-            人民币,美元等的对方水电费水电费第三方的
-          </div>
-        </div>
-
-
-        <!-- 时间 -->
-        <div class="date">
-          09:17
-        </div>
-      </a>
+    <li class="goods_li mb-5">
+      <div class="img_wrap">
+        <a class="w-100 h-100" href="">
+          <img data-funlazy="./images/goods1.png" alt="">
+        </a>
+      </div>
+      <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+          安费诺安全插座插线板750度高温打发顺丰打发顺丰...
+        </a></p>
+      <div class="date_wrap d-flex align-items-center">
+        <p class="date mb-0">发布日期：2020/07/18</p>
+        <span class="cate ml-2" style="background: #dc3173;">供应</span>
+        <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
+         
+      </div>
     </li>
     {{/each}}
   </script>
@@ -86,7 +77,7 @@
       font-weight: 600;
     }
   </style>
-  <title>我的消息</title>
+  <title>我的收藏</title>
 </head>
 
 <body class="body">
@@ -314,7 +305,7 @@
             </a>
           </li>
           <!-- 我的消息 -->
-          <li class="w-100 active">
+          <li class="w-100">
             <a href="mynotice.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -333,7 +324,7 @@
             </a>
           </li>
           <!-- 我的收藏 -->
-          <li class="w-100">
+          <li class="w-100 active">
             <a href="mycollect.html"
               class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
               <svg t="1602928260765" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -408,352 +399,248 @@
       </div>
       <!-- 中间的条目 -->
       <div class="content_item pl-4 pr-4 shadow-sm bg-white">
-        <div class="w-100 content_header font-weight-bold pt-3 pb-3 d-flex align-items-center">
-          <span>我的消息</span>
-          <!-- 搜索 -->
-          <div class="d-flex search flex-nowrap ml-4">
-            <div class="search_left text-center">
-              搜索消息
-            </div>
-            <input class="col search_input border-0" type="text">
-            <div class="mr-4 search_icon d-flex align-items-center search_notice_btn">
-              <svg t="1605165509810" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="12750" width="20" height="20">
-                <path
-                  d="M798.386532 434.840666c0 90.322122-32.875059 173.048241-87.325366 236.740866 0 0 195.358181 195.621353 232.072842 231.577263 30.171373 29.522384-4.434167 75.370595-43.419638 33.901111-23.467419-24.980951-228.233239-225.844701-228.233239-225.844701-63.803709 54.933123-146.802359 88.132246-237.587665 88.132246-201.30588 0-364.492043-163.235758-364.492043-364.506784 0-201.271026 163.186162-364.477109 364.492043-364.477109C635.200369 70.363558 798.386532 233.56964 798.386532 434.840666zM433.893466 128.136356c-169.349788 0-306.69027 137.333832-306.69027 306.676681 0 169.398108 137.340482 306.732963 306.69027 306.732963 169.404026 0 306.744508-137.334855 306.744508-306.732963C740.637974 265.470187 603.297491 128.136356 433.893466 128.136356z"
-                  p-id="12751" fill="#666666"></path>
-              </svg>
-            </div>
-          </div>
+        <div class="w-100 content_header font-weight-bold pt-3 pb-3">
+          我的收藏
         </div>
-        <!-- 消息内容 -->
-        <div class="notice_wrapper wrapper overflow-auto pr-4 mt-3">
-          <ul class="notice_ul w-100 content">
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
+        <!-- 发布的内容 -->
+        <div class="pub_wrapper wrapper overflow-auto pr-4 mt-3">
+          <ul class="goods_ul_content overflow-auto content supply_ul ">
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰...
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-2" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
 
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
             </li>
-            <li class="notice_li w-100">
-              <a href="javascript:void(0)" class="text-decoration-none">
-                <div class="avatar_wrap">
-                  <div class="ava_img">
-                    <img src="./images/touxiang.png" alt="">
-                    <span class="dot">3</span>
-                  </div>
-                  <div class="n_con d-flex flex-column justify-content-center ml-3">
-                    <p class="username font-weight-bold mb-0">千纸鹤~</p>
-                    <p class="notice_desc mb-0 mt-1">
-                      你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
-                    </p>
-                  </div>
-                  <div class="current_title text-truncate ml-2 pl-2 pr-2" style="background: #1a8eff;">
-                    人民币,美元等的对方水电费水电费第三方的
-                  </div>
-                </div>
 
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
 
-                <!-- 时间 -->
-                <div class="date">
-                  09:17
-                </div>
-              </a>
+              </div>
+            </li>
+
+            <li class="goods_li mb-5">
+              <div class="img_wrap">
+                <a class="w-100 h-100" href="">
+                  <img data-funlazy="./images/goods1.png" alt="">
+                </a>
+              </div>
+              <p class="goods_name text-truncate pt-1 mb-1"><a class="text-decoration-none" href="">
+                  安费诺安全插座插线板750度高温打发顺丰打发顺丰
+                </a></p>
+              <div class="date_wrap d-flex align-items-center">
+                <p class="date mb-0">发布日期：2020/07/18</p>
+                <span class="cate ml-1" style="background: #dc3173;">供应</span>
+                <a href="javascript:void(0)" class="private_chat ml-1 text-decoration-none"> 私聊</a>
+
+              </div>
             </li>
           </ul>
         </div>
@@ -836,7 +723,6 @@
     <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_locat">切换</btn>
   </div>
 </div>
-
 <!-- 聊天框 -->
 <div class="chat_wrap">
   <div class="chat_content_wrap">
@@ -1021,7 +907,7 @@
     let dataHtml = template(el, {
       dataList: data
     })
-    $('.notice_ul').append(dataHtml)
+    $('.goods_ul_content').append(dataHtml)
     lazyPic()
   }
 
@@ -1033,17 +919,19 @@
 
   lazyPic()
 
+
   // 数据滚动底部
   let dataWrapper = new Dropload({
-    el: '.notice_wrapper',
+    el: '.pub_wrapper',
     distanceEnd: 500,
     success: function () {
       topbar.show()
       setTimeout(function () {
         let data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
         addTemplateData('data_tep', data)
+        // 关闭进度条
         topbar.hide()
-
+        // 重新监听点击显示聊天框
         listenClickDisplayChat()
       }, 1000)
     }
@@ -1051,7 +939,6 @@
 
 </script>
 
-<!-- 动态的控制脚部 -->
 <script>
   function changeFooter() {
     let wh = $(window).height()
@@ -1075,8 +962,8 @@
 <script>
   var chat;
   function listenClickDisplayChat() {
-    let noticeLis = $('.notice_ul').find('li')
-    noticeLis.click(function () {
+    let private_chat = $('.goods_li').find('.private_chat')
+    private_chat.click(function () {
       // 显示tobar
       topbar.show()
       // 发送请求
@@ -1138,7 +1025,6 @@
 
   $('.chat_textarea').focus(function () {
     console.log('jjj');
-
   })
 
   closeChat()
