@@ -1,0 +1,331 @@
+<!--
+ * @Author: liweilong
+ * @Date: 2020-11-16 21:20:44
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 通用样式 -->
+  <link rel="stylesheet" href="./css/init.min.css">
+  <link rel="stylesheet" href="./js/tool/bootstrap4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./js/tool/layer/theme/default/layer.css">
+  <link rel="stylesheet" href="./css/publish.css">
+
+  <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+  <script src="./js/tool/jquery.min.js"></script>
+  <script src="./js/location.min.js"></script>
+  <script src="./js/tool/layer/layer.js"></script>
+
+
+  <script src="./js/pcasunzip.min.js"></script>
+
+  <title>商品详情</title>
+</head>
+
+<body class="body">
+  <!-- 头部begin -->
+  <header class="shadow-sm">
+    <!-- 顶部begin -->
+    <div class="container header pl-0 pr-4">
+      <div class="align-items-center header_b">
+        <div class="float-left left_text pl-0">您好：欢迎来供需平台网</div>
+        <div class="float-right">
+          <div class="row">
+            <a href="#" class="icon_li ml-4 text-decoration-none">
+              <svg t="1605162928209" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="9256" width="20" height="20">
+                <path d="M657.635 32.427h-655.36v946.631h655.36v-72.818h-582.542v-800.995h582.542z" p-id="9257"
+                  fill="#333333"></path>
+                <path
+                  d="M323.038 469.334h591.645l-155.248-275.689c-3.568-7.136 1.675-15.583 9.684-15.583h50.682c9.467 0 18.131 5.389 22.283 13.908l173.524 299.427c5.243 10.631 5.17 23.156-0.219 33.714l-172.942 294.402c-4.369 8.519-13.107 13.908-22.719 13.908h-50.608c-7.865 0-13.035-8.301-9.467-15.364l155.102-275.906h-591.717c-15.073 0-29.491-12.234-29.491-27.307v-18.205c0-15.073 14.418-27.307 29.491-27.307z"
+                  p-id="9258" fill="#333333"></path>
+              </svg>
+              <span class="text_info">首页</span>
+            </a>
+            <div class="icon_li ml-4">
+              <svg t="1605161843004" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="2917" width="50" height="50">
+                <path
+                  d="M508.44 2C274.12 2 81.76 194.36 81.76 432.18c0 52.46 17.49 108.42 45.47 171.37 31.48 62.95 76.94 129.4 129.4 199.35 38.47 45.47 80.44 90.93 118.91 132.9l38.47 38.47C421 981.26 428 984.76 428 988.26c41.97 41.97 111.92 41.97 150.39 0l13.99-13.99 38.47-38.47c41.97-41.97 80.44-87.43 118.91-132.9 55.96-66.45 101.42-136.4 129.4-199.35 31.48-62.95 45.47-118.91 45.47-171.37C935.12 194.36 742.77 2 508.44 2z m318.14 572.51c-27.14 57.68-67.86 118.75-122.14 183.21-37.32 44.11-74.64 88.21-111.96 125.53l-37.32 37.32-13.57 13.57c-20.36 20.36-54.29 20.36-74.64 0l-13.57-13.57-37.32-37.32c-37.32-40.71-78.03-81.43-111.96-125.53-50.88-64.46-91.61-125.52-122.14-183.21-27.14-54.29-40.71-101.78-40.71-142.5 0-203.57 162.86-366.43 363.03-366.43s363.03 162.85 363.03 366.43c-0.03 40.71-13.6 88.21-40.73 142.5zM508.44 236.33c-104.92 0-185.36 83.94-185.36 188.86s83.94 188.86 185.36 188.86S693.8 530.11 693.8 425.18s-80.44-188.85-185.36-188.85z m-0.38 320.76c-70.34 0-127.28-56.95-127.28-130.63s56.95-130.63 127.28-130.63 127.28 56.95 127.28 130.63-56.94 130.63-127.28 130.63z"
+                  fill="#333333" p-id="2918"></path>
+              </svg>
+              <span class="header_lo_text">默认吧得到的</span>
+              <span class="header_location_change" style="cursor: pointer;">[切换]</span>
+            </div>
+            <div class="icon_li ml-4">
+              <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="7537" width="20" height="20">
+                <path d="M236.8 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7538"
+                  fill="#333333"></path>
+                <path
+                  d="M985.6 38.4H38.4c-19.2 0-38.4 19.2-38.4 38.4v710.4c0 19.2 19.2 38.4 38.4 38.4h352c19.2 0 38.4-19.2 38.4-38.4s-12.8-38.4-38.4-38.4H76.8V115.2h864v627.2H627.2c-12.8 0-19.2 6.4-25.6 12.8l-192 192c-12.8 6.4-19.2 19.2-19.2 32 0 19.2 19.2 38.4 38.4 38.4 12.8 0 19.2-6.4 25.6-12.8l185.6-185.6h339.2c19.2 0 38.4-19.2 38.4-38.4v-704c6.4-19.2-12.8-38.4-32-38.4z"
+                  p-id="7539" fill="#333333"></path>
+                <path d="M512 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7540" fill="#333333">
+                </path>
+                <path d="M787.2 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7541"
+                  fill="#333333"></path>
+              </svg>
+              <span class="text_info">消息</span>
+            </div>
+            <div class="icon_li ml-4">
+              <svg t="1605162785440" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="8713" width="20" height="20">
+                <path
+                  d="M499.2 1024c-256 0-460.8-204.8-460.8-460.8 0-185.6 115.2-358.4 288-428.8h12.8c19.2 0 38.4 19.2 38.4 38.4 0 12.8-12.8 32-25.6 32-147.2 64-236.8 204.8-236.8 358.4 0 217.6 172.8 390.4 390.4 390.4S896 780.8 896 563.2c0-153.6-96-294.4-236.8-358.4-19.2-6.4-32-19.2-32-38.4s19.2-38.4 38.4-38.4h12.8c172.8 70.4 288 236.8 288 428.8 0 262.4-211.2 467.2-467.2 467.2z m0-505.6c-19.2 0-38.4-19.2-38.4-38.4V38.4c6.4-19.2 19.2-38.4 38.4-38.4s38.4 19.2 38.4 38.4v441.6c0 19.2-12.8 38.4-38.4 38.4z"
+                  p-id="8714" fill="#333333"></path>
+              </svg>
+              <span class="text_info">退出</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 顶部end -->
+  </header>
+
+  <!-- 导航条begin -->
+  <nav>
+    <div class="container nav p-0">
+      <div class="d-flex align-items-center nav_row">
+        <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
+          供需平台
+        </a>
+        <div class="col mr-1">
+          <!-- 搜索 -->
+          <div class="row search flex-nowrap">
+            <div class="search_left text-center">
+              搜索网站
+            </div>
+            <input class="col search_input border-0" type="text">
+            <div class="mr-4 search_icon d-flex align-items-center">
+              <svg t="1605165509810" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="12750" width="20" height="20">
+                <path
+                  d="M798.386532 434.840666c0 90.322122-32.875059 173.048241-87.325366 236.740866 0 0 195.358181 195.621353 232.072842 231.577263 30.171373 29.522384-4.434167 75.370595-43.419638 33.901111-23.467419-24.980951-228.233239-225.844701-228.233239-225.844701-63.803709 54.933123-146.802359 88.132246-237.587665 88.132246-201.30588 0-364.492043-163.235758-364.492043-364.506784 0-201.271026 163.186162-364.477109 364.492043-364.477109C635.200369 70.363558 798.386532 233.56964 798.386532 434.840666zM433.893466 128.136356c-169.349788 0-306.69027 137.333832-306.69027 306.676681 0 169.398108 137.340482 306.732963 306.69027 306.732963 169.404026 0 306.744508-137.334855 306.744508-306.732963C740.637974 265.470187 603.297491 128.136356 433.893466 128.136356z"
+                  p-id="12751" fill="#666666"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <a href="publish.html" class="pub_wrap text-decoration-none" style="margin-left: 32px;">
+          <div class="position-relative">
+            <div class="pub_btn d-flex justify-content-center align-items-center position-absolute">
+              <svg t="1605167639980" class="icon" viewBox="0 0 1072 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="13647" width="25" height="25">
+                <path
+                  d="M998.009905 462.555429h-425.20381v-414.476191a48.030476 48.030476 0 1 0-96.109714 0v414.476191H60.854857a48.030476 48.030476 0 1 0 0 96.109714h415.841524v415.841524a48.030476 48.030476 0 1 0 96.109714 0v-415.841524h425.20381a48.030476 48.030476 0 1 0 0-96.109714z"
+                  fill="#ffffff" p-id="13648"></path>
+              </svg>
+            </div>
+            <div class="right_pub text-center ml-4">
+              发布供应信息
+            </div>
+          </div>
+        </a>
+        <a href="publish.html" class="pub_wrap" style="margin-left: 36px;">
+          <div class="position-relative">
+            <div class="pub_btn d-flex justify-content-center align-items-center position-absolute">
+              <svg t="1605167639980" class="icon" viewBox="0 0 1072 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="13647" width="25" height="25">
+                <path
+                  d="M998.009905 462.555429h-425.20381v-414.476191a48.030476 48.030476 0 1 0-96.109714 0v414.476191H60.854857a48.030476 48.030476 0 1 0 0 96.109714h415.841524v415.841524a48.030476 48.030476 0 1 0 96.109714 0v-415.841524h425.20381a48.030476 48.030476 0 1 0 0-96.109714z"
+                  fill="#ffffff" p-id="13648"></path>
+              </svg>
+            </div>
+            <div class="right_pub text-center ml-4">
+              发布需求信息
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- 导航条end -->
+
+  <!-- 隐藏导航条begin -->
+  <nav class="display_none_nav position-fixed shadow-sm bg-white">
+    <div class="container nav p-0">
+      <div class="d-flex align-items-center nav_row">
+        <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
+          供需平台
+        </a>
+        <div class="col mr-1">
+          <!-- 搜索 -->
+          <div class="row search flex-nowrap">
+            <div class="search_left text-center">
+              搜索网站
+            </div>
+            <input class="col search_input border-0" type="text">
+            <div class="mr-4 search_icon d-flex align-items-center">
+              <svg t="1605165509810" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="12750" width="20" height="20">
+                <path
+                  d="M798.386532 434.840666c0 90.322122-32.875059 173.048241-87.325366 236.740866 0 0 195.358181 195.621353 232.072842 231.577263 30.171373 29.522384-4.434167 75.370595-43.419638 33.901111-23.467419-24.980951-228.233239-225.844701-228.233239-225.844701-63.803709 54.933123-146.802359 88.132246-237.587665 88.132246-201.30588 0-364.492043-163.235758-364.492043-364.506784 0-201.271026 163.186162-364.477109 364.492043-364.477109C635.200369 70.363558 798.386532 233.56964 798.386532 434.840666zM433.893466 128.136356c-169.349788 0-306.69027 137.333832-306.69027 306.676681 0 169.398108 137.340482 306.732963 306.69027 306.732963 169.404026 0 306.744508-137.334855 306.744508-306.732963C740.637974 265.470187 603.297491 128.136356 433.893466 128.136356z"
+                  p-id="12751" fill="#666666"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <a href="publish.html" class="pub_wrap text-decoration-none" style="margin-left: 32px;">
+          <div class="position-relative">
+            <div class="pub_btn d-flex justify-content-center align-items-center position-absolute">
+              <svg t="1605167639980" class="icon" viewBox="0 0 1072 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="13647" width="25" height="25">
+                <path
+                  d="M998.009905 462.555429h-425.20381v-414.476191a48.030476 48.030476 0 1 0-96.109714 0v414.476191H60.854857a48.030476 48.030476 0 1 0 0 96.109714h415.841524v415.841524a48.030476 48.030476 0 1 0 96.109714 0v-415.841524h425.20381a48.030476 48.030476 0 1 0 0-96.109714z"
+                  fill="#ffffff" p-id="13648"></path>
+              </svg>
+            </div>
+            <div class="right_pub text-center ml-4">
+              发布供应信息
+            </div>
+          </div>
+        </a>
+        <a href="publish.html" class="pub_wrap" style="margin-left: 36px;">
+          <div class="position-relative">
+            <div class="pub_btn d-flex justify-content-center align-items-center position-absolute">
+              <svg t="1605167639980" class="icon" viewBox="0 0 1072 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="13647" width="25" height="25">
+                <path
+                  d="M998.009905 462.555429h-425.20381v-414.476191a48.030476 48.030476 0 1 0-96.109714 0v414.476191H60.854857a48.030476 48.030476 0 1 0 0 96.109714h415.841524v415.841524a48.030476 48.030476 0 1 0 96.109714 0v-415.841524h425.20381a48.030476 48.030476 0 1 0 0-96.109714z"
+                  fill="#ffffff" p-id="13648"></path>
+              </svg>
+            </div>
+            <div class="right_pub text-center ml-4">
+              发布需求信息
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- 隐藏导航条end -->
+  <!-- 头部end -->
+
+  <!-- 面包屑begin -->
+  <section>
+    <div class="container bread_wrap p-0">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">供需平台</a></li>
+        <li class="breadcrumb-item"><a href="#">供应信息</a></li>
+        <li class="breadcrumb-item"><a href="#">查看详情</a></li>
+      </ol>
+    </div>
+  </section>
+  <!-- 面包屑end -->
+
+  <!-- 商品信息bengin -->
+  <section>
+    
+  </section>
+  <!-- 商品信息end -->
+
+  <!-- 脚部begin -->
+  <footer class="footer">
+    <div class="footer_top row flex-nowrap container-fluid ml-0 justify-content-center align-items-center">
+      供需平台网郑重提醒：商务洽谈过程请小心谨慎，认真核实对方信息，谨防欺诈。
+    </div>
+    <div class="footer_bottom">
+      <div class="row justify-content-center align-items-center mt-4">
+        Copyright © 2009-2020 供需平台 All Rights Reserved。
+      </div>
+      <div class="row justify-content-center align-items-center">
+        粤ICP备18029671号-2
+      </div>
+    </div>
+  </footer>
+  <!-- 脚部end -->
+
+</body>
+<!-- 选择位置 -->
+<div class="location_change_wrap shadow-sm">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="s_province" name="s_province"></select>  
+      <select id="s_city" name="s_city"></select>  
+      <select id="s_county" name="s_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_locat">切换</btn>
+  </div>
+</div>
+<script src="./js/common.min.js"></script>
+<script>
+  // 初始化位置
+  function initArea() {
+    _init_area(["s_province", "s_city", "s_county"])
+    _init_area(["p_province", "p_city", "p_county"])
+    changeLocation()
+  }
+
+  // 位置选择方法
+  function changeLocation() {
+    // 点击显示切换的位置选择
+    $('.header_location_change').click(function (e) {
+      console.log(e);
+      console.log(e.clientX);
+      console.log(e.clientY);
+      let top = `${e.clientY + 30}px`
+      let left = `${e.clientX - 250}px`
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.location_change_wrap'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      alert(getpro + " " + getcity + " " + getarea);
+    })
+  }
+
+  // 自动获取定位
+  function autoGetLocation() {
+    // 获取地址
+    let ll = new MyLocation()
+
+    ll.getLoaction(function (res) {
+      let { ad_info } = res.result
+      $('.header_lo_text').text(ad_info.city)
+    })
+  }
+
+  // 自动定位
+  autoGetLocation()
+
+  // 初始化位置
+  initArea()
+
+</script>
+
+<script>
+  function changeFooter() {
+    let wh = $(window).height()
+    let contentH = $('.body').height()
+    if (contentH <= wh) {
+      $('.footer').addClass('footer_fixed')
+    } else {
+      $('.footer').removeClass('footer_fixed')
+    }
+  }
+  setTimeout(function () {
+    changeFooter()
+  }, 0)
+
+  $(window).resize(function () {
+    changeFooter()
+  })
+</script>
+
+</html>
