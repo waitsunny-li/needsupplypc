@@ -213,24 +213,24 @@ header {
     }
   }
 
-  .notice_li_ul::-webkit-scrollbar {
-    width: 6px;
+  .ul_wrap::-webkit-scrollbar {
+    width: 8px;
     height: 1px;
   }
 
-  .notice_li_ul::-webkit-scrollbar-thumb {
+  .ul_wrap::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: $htmlColor;
   }
 
-  .notice_li_ul::-webkit-scrollbar-track {
+  .ul_wrap::-webkit-scrollbar-track {
     /*滚动条里面轨道*/
     border-radius: 10px;
     background: #EEEEEE;
   }
 
   .ul_wrap {
-    height: 280px;
+    height: 350px;
     overflow-y: auto;
   }
 
