@@ -1,0 +1,320 @@
+/*
+ * @Author: liweilong
+ * @Date: 2020-11-12 13:39:57
+ */
+@import './header.scss';
+
+
+.bread_wrap {
+  .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: ">";
+  }
+
+  .breadcrumb-item {
+    a {
+      color: #333333;
+    }
+  }
+}
+
+.goods_content_wrap {
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+
+  // 描述
+  .goods_content {
+
+    .title {
+      font-size: 24px;
+      font-family: SimHei;
+      font-weight: 400;
+      color: #000000;
+    }
+
+    .content_wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .l_content {
+        width: 45%;
+
+        .l_ul {
+          width: 100%;
+
+          li {
+            font-size: 18px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #666666;
+            line-height: 36px;
+          }
+        }
+      }
+    }
+
+
+    .c_content {
+      width: 100%;
+
+      .supply_title {
+        font-size: 20px;
+        font-family: SimHei;
+        font-weight: 400;
+        color: #717171;
+        line-height: 30px;
+      }
+
+      .supply_con {
+        font-size: 20px;
+        font-family: SimHei;
+        font-weight: 400;
+        color: #717171;
+        line-height: 30px;
+      }
+    }
+
+    // 日期
+    .date_wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .publish_date {
+        font-size: 18px;
+        font-weight: 400;
+        color: #656565;
+      }
+
+      .end_date {
+        font-size: 18px;
+        font-weight: 400;
+        color: #656565;
+      }
+    }
+
+    // 图片展示
+    .pic_content {
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+
+      .swiper-wrapper {
+        width: 100%;
+
+        .swiper-slide {
+          width: 370px;
+          height: 237px;
+          box-sizing: border-box;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+  }
+
+  // 发布评论框
+  .send_tab {
+    height: 55px;
+    background-color: #ffffff;
+    z-index: 1002;
+    box-sizing: border-box;
+
+    .input_wrap {
+      height: 55px;
+      background: #ECECEC;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 760px;
+        height: 50px;
+        font-size: 22px;
+        font-weight: 400;
+        color: #999999;
+        border: none;
+        border-radius: 10px;
+        background-color: #ECECEC;
+        line-height: 0.6rem;
+      }
+
+      // input::-webkit-input-placeholder {
+      //   color: #000000;
+      // }
+
+      // input::-moz-placeholder {
+      //   color: #000000;
+      // }
+
+      // input::-ms-input-placeholder {
+      //   color: #000000;
+      // }
+    }
+
+    .submit_btn {
+      float: right;
+      width: 120px;
+      height: 55px;
+      line-height: 55px;
+      background-color: $htmlColor;
+      color: #ffffff;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 22px;
+      display: none;
+    }
+
+    // 功能组
+    .func_icon_group {
+      height: 100%;
+
+      .icon_wrap {
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        svg {
+          width: 35px;
+          height: 35px;
+        }
+
+        .text {
+          margin-top: 5px;
+          font-size: 19px;
+          font-weight: 400;
+          color: #333333;
+        }
+      }
+
+      .iwant {
+        display: inline-block;
+        width: 120px;
+        height: 36px;
+        line-height: 36px;
+        background: linear-gradient(0deg, #13A2A2, #73D9D9);
+        border-radius: 18px;
+        border-radius: 23px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // 评论区
+  .comment_wrap {
+    box-sizing: border-box;
+
+    .head_title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #000000;
+    }
+
+    @mixin comment_li {
+      .con {
+        display: flex;
+        padding-top: 10px;
+
+        .ava_wrap {
+          width: 63px;
+          height: 63px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+
+        .comment_content_first {
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .name {
+            font-size: 18px;
+            font-weight: 400;
+            color: #A0A0A0;
+          }
+
+          .content {
+            font-size: 21px;
+            font-weight: 400;
+            color: #000000;
+          }
+        }
+      }
+    }
+
+    .first_comment_content {
+      width: 100%;
+
+      .first_comment_ul {
+        width: 100%;
+
+        .first_comment_li {
+          width: 100%;
+          padding: 0.133333rem 0;
+          border-bottom: 1px solid #E5E5E5;
+
+          @include comment_li;
+
+          .second_comment {
+            margin-left: 35px;
+
+            .second_comment_ul {
+              width: 100%;
+
+              .second_comment_li {
+                @include comment_li;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 腳部
+footer {
+  height: 168px;
+  background-color: #D9D9D9;
+
+  .footer_top {
+    height: 65px;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #333333;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .footer_bottom {
+    color: #333333;
+    font-size: 18px;
+  }
+}
+
+.footer_fixed {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

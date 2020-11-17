@@ -44,6 +44,8 @@ header {
           font-size: 18px;
         }
       }
+
+
     }
   }
 }
@@ -99,6 +101,7 @@ header {
     .pub_wrap {
       width: 180px;
       display: block;
+      text-decoration: none;
 
       .pub_btn {
         width: 60px;
@@ -151,6 +154,159 @@ header {
 
     option {
       border: none;
+    }
+  }
+}
+
+
+// 消息列表
+.notice_list_wrap {
+  width: 363px;
+  height: 409px;
+  background-color: #FFFFFF;
+  z-index: 1000;
+  display: none;
+
+  .caret {
+    top: -150px;
+    z-index: 1000;
+    width: 0;
+    height: 0;
+    border: 20px solid;
+    border-color: transparent transparent red;
+  }
+
+  .header_notice_title {
+    color: #999999;
+
+  }
+
+
+  .search {
+    width: 300px;
+    height: 46px;
+    border: 1px solid #DCDCDC;
+    border-radius: 23px;
+    margin: 0 auto;
+
+    .search_left {
+      height: 47px;
+      line-height: 47px;
+      border-radius: 23px;
+      font-size: 20px;
+      font-family: Adobe Heiti Std;
+      font-weight: normal;
+      color: #999999;
+    }
+
+    .search_input {
+      outline: none;
+      height: 40px;
+      border-radius: 23px;
+    }
+
+    .search_icon {
+      svg {
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+
+  .notice_li_ul::-webkit-scrollbar {
+    width: 6px;
+    height: 1px;
+  }
+
+  .notice_li_ul::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $htmlColor;
+  }
+
+  .notice_li_ul::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    border-radius: 10px;
+    background: #EEEEEE;
+  }
+
+  .ul_wrap {
+    height: 280px;
+    overflow-y: auto;
+  }
+
+  .notice_li_ul {
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    .new_notice_li {
+      width: 100%;
+      border-bottom: 1px solid #DCDCDC;
+      box-sizing: border-box;
+
+      a {
+        width: 100%;
+        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .avatar_wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .ava_img {
+            position: relative;
+            width: 55px;
+            height: 55px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+
+            .dot {
+              position: absolute;
+              right: -5px;
+              z-index: 100;
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background-color: #dc3173;
+              color: #ffffff;
+              text-align: center;
+              line-height: 20px;
+              font-size: 0.4rem;
+            }
+          }
+
+          .n_con {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+
+            .username {
+              font-size: 20px;
+              font-family: SimHei;
+              font-weight: 400;
+              color: #333333;
+            }
+
+            .notice_desc {
+              width: 250px;
+              font-size: 16px;
+              font-family: PingFang;
+              font-weight: 400;
+              color: #999999;
+            }
+          }
+        }
+      }
+
     }
   }
 }

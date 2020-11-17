@@ -12,16 +12,46 @@
   <link rel="stylesheet" href="./css/init.min.css">
   <link rel="stylesheet" href="./js/tool/bootstrap4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./js/tool/layer/theme/default/layer.css">
-  <link rel="stylesheet" href="./css/publish.css">
-
+  <link rel="stylesheet" href="./css/goods_detail.css">
+  <link rel="stylesheet" href="./css/chat.css">
   <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/location.min.js"></script>
+  <script src="./js/tool/topbar.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
-
-
   <script src="./js/pcasunzip.min.js"></script>
 
+  <!-- 自己发送的聊天模板 -->
+  <script type="text/html" id="chat_mine_data">
+    <li class="chat_li_mine">
+      <div class="avatar_wrap">
+        <div class="ava_img">
+          <img src="{{mine_image_src}}"
+            alt="">
+        </div>
+      </div>
+      <div class="chat_content">
+        <div class="chat_inner_content">
+          {{chat_content}}
+        </div>
+      </div>
+    </li>
+  </script>
+
+  <style>
+    .layui-layer-page .layui-layer-content {
+      overflow: hidden;
+    }
+
+    .layui-layer-title {
+      text-align: center;
+      padding-left: 80px;
+      height: 60px;
+      line-height: 60px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+  </style>
   <title>商品详情</title>
 </head>
 
@@ -34,7 +64,7 @@
         <div class="float-left left_text pl-0">您好：欢迎来供需平台网</div>
         <div class="float-right">
           <div class="row">
-            <a href="#" class="icon_li ml-4 text-decoration-none">
+            <a href="index.html" class="icon_li ml-4 text-decoration-none">
               <svg t="1605162928209" class="icon" viewBox="0 0 1024 1024" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" p-id="9256" width="20" height="20">
                 <path d="M657.635 32.427h-655.36v946.631h655.36v-72.818h-582.542v-800.995h582.542z" p-id="9257"
@@ -55,7 +85,7 @@
               <span class="header_lo_text">默认吧得到的</span>
               <span class="header_location_change" style="cursor: pointer;">[切换]</span>
             </div>
-            <div class="icon_li ml-4">
+            <div class="icon_li ml-4 notice_btn_wrap" style="cursor: pointer;">
               <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" p-id="7537" width="20" height="20">
                 <path d="M236.8 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7538"
@@ -219,7 +249,208 @@
 
   <!-- 商品信息bengin -->
   <section>
-    
+    <div class="goods_content_wrap container p-4 mb-4">
+      <div class=" w-100 goods_content">
+        <div class="title">供应标题：大量可团购小样产品，雅诗兰黛唇彩5ml小样</div>
+        <div class="content_wrap mt-3">
+          <div class="l_content">
+            <ul class="l_ul">
+              <li>供应商联系方式</li>
+              <li>姓名：庞露</li>
+              <li>手机：13810330188</li>
+              <li>电话：8601064353535-50</li>
+              <li>地址：中国北京北京市北京市
+                朝阳区工体三号1710</li>
+            </ul>
+          </div>
+          <div class="l_content">
+            <ul class="l_ul">
+              <li>公司名称：庞露</li>
+              <li>行业分类：家居用品 </li>
+              <li>供应商所在地：北京-庞露</li>
+              <li>供应商经营模式：生产贸易</li>
+              <li>供应商经营模式：生产贸易</li>
+              <li>供应商经营范围：家居用品</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="c_content">
+          <div class="supply_title">
+            供应说明：（补充资料）：
+          </div>
+          <div class="supply_con">
+            品牌雅诗兰黛品牌类型欧美品牌颜色454749规格小样净含量6（g）生产日期2010保质期
+            5年（个月）名称：莹粹亮彩水晶唇彩4.6ml包装：无盒有密封产地：比利时进口中国组装
+            规格：4.6ML中小样装适用年龄：16岁以上特点功效：高保湿，赋予双唇如初晨蓓蕾般的
+            水嫩和柔润光泽。使用方法：可单独使用也可以搭配其他唇膏或者唇彩使用商品介绍：莹
+            粹亮彩水晶唇彩，蕴含神奇的高分子保湿聚合物成分，赋予双唇如初晨蓓蕾般的水嫩
+          </div>
+          <div class="supply_title">
+            公司简介：
+          </div>
+          <div class="supply_con">
+            庞露（个人）是国际品牌化妆品、护肤品，国际品牌香水的企业，是经国家相关部门批准
+            注册的企业。主营各一线品牌化妆品，彩妆，香水，公司位于中国北京北京市北京市朝阳
+            区。庞露（个人）本着“客户，诚信至上”的原则，与多家企业建立了长期的合作关系。
+            热诚欢迎各界朋友前来参观、考察、洽谈业务。请描述具体要求，详细的描述可以让更多
+            更优质的采购商找到您。
+          </div>
+        </div>
+
+        <!-- 时间日期 -->
+        <div class="date_wrap mt-5 mb-3">
+          <div class="publish_date">
+            发布时间：2020/7/17
+          </div>
+          <div class="end_date">
+            截止时间：2020/9/17
+          </div>
+        </div>
+
+        <!-- pic_content -->
+        <div class="swiper-container pic_content">
+          <div class="swiper-wrapper d-flex justify-content-between">
+            <div class="swiper-slide">
+              <img src="./images/goods1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/goods2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/goods3.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- 评论 -->
+      <div class="comment_wrap mt-4">
+        <!-- 底部评论框 -->
+        <div class="send_tab w-100 d-flex align-items-center">
+          <div class="input_wrap">
+            <input type="text" placeholder="请输入评论内容.." class="text_input comment_input pl-3">
+          </div>
+          <div class="submit_btn ml-3">
+            发送
+          </div>
+          <!-- 功能组 -->
+          <div class="func_co_i">
+            <div class="func_icon_group d-flex justify-content-between align-items-center">
+              <a href="javascript:void(0)" class="icon_wrap collect_btn">
+                <svg t="1602928260765" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="28718" width="25" height="25">
+                  <path
+                    d="M267.3 482.5c-11.4 11.1-11.6 29.4-0.5 40.8 11.1 11.4 29.4 11.6 40.8 0.5 11.4-11.1 11.6-29.4 0.5-40.8-11.2-11.5-29.4-11.7-40.8-0.5zM363.8 546.9c-8.1-8.3-21.6-8.5-29.9-0.3l-4.1 4c-8.3 8.1-8.5 21.6-0.3 29.9l154.8 158.4c8.1 8.3 21.6 8.5 29.9 0.3l4.1-4c8.3-8.1 8.5-21.6 0.3-29.9L363.8 546.9z"
+                    fill="#333333" p-id="28719"></path>
+                  <path
+                    d="M887.8 190.8c-51.7-55.2-124.7-86.9-200.4-86.9-63.9 0-126.2 22.5-175.3 63.5-49.2-40.9-111.4-63.5-175.3-63.5-75.7 0-148.7 31.7-200.3 86.9-100.9 107-95 282 13.2 390.2L476 907.2c9.6 9.6 22.5 15 36.1 15h0.1c13.7 0 26.5-5.3 36.1-15L874.5 581c107.9-108.5 113.8-283.5 13.3-390.2z m-51 351.4L512.2 867.5 187.6 543c-87.9-87.6-93.3-229.1-12.1-315.4 41.6-44.5 100.4-70 161.3-70h0.3c53.1 0 104.4 19.2 144.4 54 8.5 7.5 19.4 11.6 30.7 11.6s22.2-4.1 30.7-11.6c40.2-35.1 91.7-54.4 145.1-54.4 60.7 0 119.4 25.4 160.9 69.6 81.1 86.2 75.7 227.6-12.1 315.4z"
+                    fill="#333333" p-id="28720"></path>
+                </svg>
+                <span class="text">收藏</span>
+              </a>
+              <a href="reportlist.html" class="icon_wrap">
+                <svg t="1603157248349" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="2516" width="35" height="35">
+                  <path
+                    d="M913.796062 318.969659c-7.671727-15.969717-26.804483-22.733771-42.804898-15.014972-15.937994 7.671727-22.670326 26.835182-14.998599 42.789549 91.184769 189.680037 11.085476 418.204777-178.610934 509.403872-189.570543 91.184769-418.157705 11.116175-509.373173-178.579211-91.183745-189.680037-11.085476-418.204777 178.610934-509.403872 129.355113-62.156642 280.817734-47.048549 395.454634 39.32975 14.122649 10.708899 34.225499 7.828292 44.903699-6.294356 10.646478-14.137998 7.828292-34.240849-6.325056-44.902676C646.787846 55.343469 469.836715 37.71395 318.813093 110.360504 97.271394 216.888725 3.707438 483.802798 110.203938 705.343473c76.654844 159.447479 236.383732 252.619508 402.50112 252.604158 64.693418-0.01535 130.388652-14.153348 192.482873-43.995003C926.728606 807.42543 1020.292562 540.510334 913.796062 318.969659z"
+                    p-id="2517" fill="#333333"></path>
+                  <path
+                    d="M511.983627 661.301398c26.553773 0 48.097438-21.528316 48.097438-48.097438L560.081065 286.12153c0-26.569122-21.543665-48.097438-48.097438-48.097438-26.553773 0-48.097438 21.528316-48.097438 48.097438l0 327.08243C463.887212 639.774105 485.430878 661.301398 511.983627 661.301398z"
+                    p-id="2518" fill="#333333"></path>
+                  <path
+                    d="M511.994883 747.618299m-58.641585 0a57.306 57.306 0 1 0 117.28317 0 57.306 57.306 0 1 0-117.28317 0Z"
+                    p-id="2519" fill="#333333"></path>
+                </svg>
+                <span class="text">举报</span>
+              </a>
+              <a href="" class="icon_wrap">
+                <svg t="1603785109249" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="1855" width="35" height="35">
+                  <path
+                    d="M810.585696 666.655728a181.803565 181.803565 0 0 0-155.336965 83.374308l-264.515455-115.712338a154.072349 154.072349 0 0 0 12.435388-65.489029 175.450377 175.450377 0 0 0-34.174735-104.210358l236.121822-169.578946a185.115654 185.115654 0 0 0 139.800257 62.508149 178.822685 178.822685 0 1 0-186.41038-178.642026 223.295005 223.295005 0 0 0 12.435388 65.519138h-3.01099l-242.32446 178.491476a194.088404 194.088404 0 0 0-108.756952-32.759569 178.822685 178.822685 0 1 0 0 357.314162 185.115654 185.115654 0 0 0 139.800257-62.508149l270.718094 118.663109a169.307958 169.307958 0 0 0-6.202639 41.702209 186.681369 186.681369 0 0 0 372.82076 0 180.47873 180.47873 0 0 0-183.30906-178.672136zM744.916008 59.79073a119.205087 119.205087 0 1 1-124.26355 119.114758 122.125747 122.125747 0 0 1 124.26355-119.114758zM216.758284 687.943426a119.235197 119.235197 0 1 1 124.26355-119.114757 122.155857 122.155857 0 0 1-124.26355 119.114757z m593.827412 276.469085a119.205087 119.205087 0 1 1 124.26355-119.084647 122.125747 122.125747 0 0 1-124.26355 119.084647z"
+                    p-id="1856" fill="#333333"></path>
+                </svg>
+                <span class="text">分享</span>
+              </a>
+              <!-- 文字 -->
+              <a class="text-white text-decoration-none iwant" href="javascript:void(0)">我想要</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 评论区 -->
+      <div class="comment_wrap w-100 mt-3">
+        <div class="head_title">全部评论 · 65</div>
+        <div class="first_comment_content mt-3">
+          <ul class="first_comment_ul">
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">没头脑</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+
+              <!-- 二级评论 -->
+              <div class="second_comment">
+                <ul class="second_comment_ul">
+                  <li class="second_comment_li">
+                    <div class="con">
+                      <div class="ava_wrap" style="width: 52px;height: 52px;">
+                        <img src="./images/touxiang1.jpeg" alt="">
+                      </div>
+                      <div class="comment_content_first">
+                        <p class="name">就叫小鱼鱼</p>
+                        <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">史迪仔</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">不高兴</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">就叫小鱼鱼</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- 商品信息end -->
 
@@ -251,12 +482,239 @@
     <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_locat">切换</btn>
   </div>
 </div>
+
+<!-- 消息列表 -->
+<div class="notice_list_wrap d-flex flex-column align-items-center ">
+  <span class=" caret position-absolute"></span>
+  <!-- <div class="header_notice_title w-100 d-flex justify-content-center pt-3 pb-3">我的私信</div> -->
+  <div class="search d-flex flex-nowrap align-items-center mt-2 ">
+
+    <input class="col search_input border-0" type="text" placeholder="搜索需求">
+    <div class="mr-4 search_icon d-flex align-items-center">
+      <svg t="1605165509810" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="12750" width="20" height="20">
+        <path
+          d="M798.386532 434.840666c0 90.322122-32.875059 173.048241-87.325366 236.740866 0 0 195.358181 195.621353 232.072842 231.577263 30.171373 29.522384-4.434167 75.370595-43.419638 33.901111-23.467419-24.980951-228.233239-225.844701-228.233239-225.844701-63.803709 54.933123-146.802359 88.132246-237.587665 88.132246-201.30588 0-364.492043-163.235758-364.492043-364.506784 0-201.271026 163.186162-364.477109 364.492043-364.477109C635.200369 70.363558 798.386532 233.56964 798.386532 434.840666zM433.893466 128.136356c-169.349788 0-306.69027 137.333832-306.69027 306.676681 0 169.398108 137.340482 306.732963 306.69027 306.732963 169.404026 0 306.744508-137.334855 306.744508-306.732963C740.637974 265.470187 603.297491 128.136356 433.893466 128.136356z"
+          p-id="12751" fill="#666666"></path>
+      </svg>
+    </div>
+  </div>
+  <ul class="notice_li_ul p-3 mt-2">
+    <li class="new_notice_li pt-3 pb-3">
+      <a href="javascript:void(0)" class="text-decoration-none">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username mb-0">千纸鹤~</p>
+            <p class="notice_desc mb-0 text-truncate">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="new_notice_li pt-3 pb-3">
+      <a href="javascript:void(0)" class="text-decoration-none">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username mb-0">千纸鹤~</p>
+            <p class="notice_desc mb-0 text-truncate">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="new_notice_li pt-3 pb-3">
+      <a href="javascript:void(0)" class="text-decoration-none">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username mb-0">千纸鹤~</p>
+            <p class="notice_desc mb-0 text-truncate">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="new_notice_li pt-3 pb-3">
+      <a href="javascript:void(0)" class="text-decoration-none">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username mb-0">千纸鹤~</p>
+            <p class="notice_desc mb-0 text-truncate">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="new_notice_li pt-3 pb-3">
+      <a href="javascript:void(0)" class="text-decoration-none">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username mb-0">千纸鹤~</p>
+            <p class="notice_desc mb-0 text-truncate">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 聊天框 -->
+<div class="chat_wrap">
+  <div class="chat_content_wrap">
+    <ul class="chat_ul">
+      <li class="chat_li">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang1.jpeg" alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+
+      <li class="chat_li_mine">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+              alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+
+      <li class="chat_li">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang1.jpeg" alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            请问，你想了解我的需求项目吗？如果想的话，请打我这个电话，我们详细聊，电话：15888888888
+          </div>
+        </div>
+      </li>
+      <li class="chat_li_mine">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+              alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+      <li class="chat_li_mine">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+              alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom_write">
+    <div class="func_group">
+      <div class="icon_wrap">
+        <input type="file" hidden class="file_input">
+        <svg t="1604559451101" class="icon pic_btn" viewBox="0 0 1024 1024" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" p-id="3037" width="30" height="30">
+          <path
+            d="M856.32 428.064c-94.816 0-144.928 90.656-185.184 163.52-25.824 46.688-52.512 94.944-78.72 97.568-28.544-5.664-48.096-23.2-70.656-43.36-31.744-28.448-67.488-60.288-130.464-57.952-76.8 3.328-146.24 57.696-206.4 161.696a32 32 0 0 0 55.392 32.064c48.48-83.84 100.224-127.488 153.728-129.824 36.928-1.44 56.96 16.576 84.992 41.664 26.88 24.096 57.344 51.36 105.888 59.392a31.584 31.584 0 0 0 5.216 0.448c64.704 0 101.44-66.464 136.96-130.72 28.352-51.328 57.504-104 97.184-123.072v369.984H128V231.68h488.16a32 32 0 1 0 0-64H96a32 32 0 0 0-32 32v701.824a32 32 0 0 0 32 32h760.32a32 32 0 0 0 32-32v-441.44a32 32 0 0 0-32-32z m-675.36-3.744c0 57.952 47.168 105.12 105.12 105.12S391.2 482.272 391.2 424.32s-47.168-105.088-105.12-105.088-105.12 47.136-105.12 105.088z m146.24 0a41.152 41.152 0 0 1-82.24 0 41.152 41.152 0 0 1 82.24 0zM960 174.656h-61.376V113.28a32 32 0 1 0-64 0v61.344H752.64a32 32 0 1 0 0 64h81.984v81.984a32 32 0 1 0 64 0v-81.952H960a32 32 0 1 0 0-64z"
+            p-id="3038" fill="#8a8a8a"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="write_input position-relative">
+      <textarea class="chat_textarea" name="content" id=""></textarea>
+      <button class="btn close_btn position-absolute text-white p-0">关闭</button>
+      <button class="btn chat_submit_btn position-absolute text-white p-0">发送</button>
+    </div>
+  </div>
+</div>
 <script src="./js/common.min.js"></script>
+
+<!-- 评论js -->
+<script>
+  // 监听评论框聚焦事件
+  function listentCommentInput() {
+    // 聚焦事件
+    $('.comment_input').focus(function () {
+      $(this).stop().animate({
+        'width': '1000px'
+      }, 500)
+      // 隐藏收藏举报我想要功能
+      $('.func_co_i').fadeOut(500)
+      // 显示发送按钮
+      // $('.').fadeIn(500)
+      $(".submit_btn").show(500)
+    })
+    // 失焦事件
+    $('.comment_input').blur(function () {
+      $(this).stop().animate({
+        'width': '760px'
+      }, 500)
+      // 显示收藏举报我想要功能
+      $('.func_co_i').fadeIn(500)
+      // 隐藏发送按钮
+      $('.submit_btn').hide(500)
+    })
+  }
+  // 监听评论框聚焦事件
+  listentCommentInput()
+
+  // 收藏按钮事件
+  $('.collect_btn').click(function () {
+    layer.msg('亲，已收藏成功!', { icon: 1 });
+  })
+</script>
+
+<!-- 位置 -->
 <script>
   // 初始化位置
   function initArea() {
     _init_area(["s_province", "s_city", "s_county"])
-    _init_area(["p_province", "p_city", "p_county"])
     changeLocation()
   }
 
@@ -309,6 +767,7 @@
 
 </script>
 
+<!-- 动态设置脚部 -->
 <script>
   function changeFooter() {
     let wh = $(window).height()
@@ -326,6 +785,134 @@
   $(window).resize(function () {
     changeFooter()
   })
+</script>
+
+<!-- 聊天设置 -->
+<script>
+  var chat;
+  function listenClickDisplayChat() {
+
+    $('.iwant').click(function () {
+      // 显示tobar
+      topbar.show()
+      // 发送请求
+      setTimeout(() => {
+        chat = layer.open({
+          id: 'chat',
+          type: 1,
+          title: '千纸鹤~',
+          skin: '.chat_wrap', //样式类名
+          closeBtn: 1, //不显示关闭按钮
+          anim: 0,
+          // shade: 0,
+          resize: false,
+          area: ['600px', '600px'],
+          shadeClose: true, //开启遮罩关闭
+          content: $('.chat_wrap')
+        });
+        // 关闭进度
+        topbar.hide()
+      }, 500)
+    })
+
+    // 顶部显示消息
+    $('.new_notice_li').click(function () {
+      // 显示tobar
+      topbar.show()
+      // 发送请求
+      setTimeout(() => {
+        chat = layer.open({
+          id: 'chat',
+          type: 1,
+          title: '千纸鹤~',
+          skin: '.chat_wrap', //样式类名
+          closeBtn: 1, //不显示关闭按钮
+          anim: 0,
+          // shade: 0,
+          resize: false,
+          area: ['600px', '600px'],
+          shadeClose: true, //开启遮罩关闭
+          content: $('.chat_wrap')
+        });
+        // 关闭进度
+        topbar.hide()
+      }, 500)
+    })
+  }
+
+  // 聊天模板 第二个参数
+  function chatTemplate(content, ava_img) {
+    let dataHtml = template('chat_mine_data', {
+      mine_image_src: ava_img,
+      chat_content: content
+    })
+    $('.chat_ul').append(dataHtml)
+    $('.chat_textarea').val('')
+  }
+  // 监听点击发送按钮
+  function listenChatBtn() {
+    $('.chat_submit_btn').click(function () {
+      let chat_content = $('.chat_textarea').val()
+      chatTemplate(chat_content, './images/touxiang.png')
+    })
+  }
+
+  // 关闭聊天框
+  function closeChat() {
+    $('.close_btn').click(function () {
+      layer.closeAll('page')
+    })
+  }
+  // 监听点击显示弹出聊天框
+  listenClickDisplayChat()
+
+  // 监听点击发送
+  listenChatBtn()
+
+  $('.btn').click(function () {
+
+    // setTimeout(() => {
+    //   layer.title('hhh', h)
+    // }, 1000)
+  })
+
+  $('.chat_textarea').focus(function () {
+    console.log('jjj');
+  })
+
+  closeChat()
+
+  // 图片发送
+  $('.pic_btn').click(function () {
+    $('.file_input').click()
+  })
+
+  $('.file_input').change(function () {
+    let file = document.getElementsByClassName('file_input')[0]
+    console.log(file.files);
+    console.log($(this));
+  })
+
+</script>
+
+<!-- 顶部消息栏 -->
+<script>
+  $('.notice_btn_wrap').click(function (event) {
+    // let top = `${e.clientY + 30}px`
+    let top = event.clientY + 30 + 'px'
+    // let left = `${e.clientX - 250}px`
+    let left = event.clientX - 180 + 'px'
+    layer.open({
+      type: 1,
+      title: '我的私信',
+      closeBtn: 0, //不显示关闭按钮
+      anim: 0,
+      offset: [top, left],
+      shadeClose: true, //开启遮罩关闭
+      content: $('.notice_list_wrap')
+    });
+  })
+
 </script>
 
 </html>

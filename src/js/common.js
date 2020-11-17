@@ -172,3 +172,20 @@ class Common {
 }
 
 new Common()
+
+// 检测文本字数
+function checkTextNumber(el, cb) {
+  let timer = null
+  let reg = /[\r\n]+/g;
+  $(el).on('input', function () {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
+      let text = $(this).val()
+      let hang = Math.floor((text.length)/30)
+      $(el).css({'height': 60 + hang * 30 + 'px'})
+      cb(text.length)
+    }, 300)
+  })
+}
