@@ -248,9 +248,33 @@
           justify-content: center;
 
           .name {
-            font-size: 18px;
-            font-weight: 400;
-            color: #A0A0A0;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .n1 {
+              font-size: 18px;
+              font-weight: 400;
+              color: #A0A0A0;
+            }
+
+            .reply {
+              display: none;
+              width: 20px;
+              height: 20px;
+
+              svg {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+              }
+            }
+
+            &:hover {
+              .reply {
+                display: block;
+              }
+            }
           }
 
           .content {
@@ -317,4 +341,13 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
+}
+
+// 举报理由
+.report_wrap {
+  display: none;
+  width: 500px;
+  height: 380px;
+  padding: 20px;
+  box-sizing: border-box;
 }

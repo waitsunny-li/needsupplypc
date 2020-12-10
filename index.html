@@ -58,7 +58,7 @@
         <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
         <div class="date_wrap d-flex align-items-center">
           <p class="date mb-0">发布日期：2020/07/18</p>
-          <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+          <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
         </div>
       </a>
     </li>
@@ -127,7 +127,7 @@
                   fill="#333333" p-id="2918"></path>
               </svg>
               <span class="header_lo_text"> </span>
-              <span class="header_location_change" style="cursor: pointer;">[切换]</span>
+              <span class="header_location_change" style="cursor: pointer;" id="top_change_btn">[切换]</span>
             </div>
             <div class="icon_li ml-4 notice_btn_wrap" style="cursor: pointer;">
               <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -161,18 +161,27 @@
     <!-- 顶部end -->
   </header>
 
+  <script>
+    // 获取地址
+    let ll = new MyLocation()
+
+    ll.getLoaction(function (res) {
+      let { ad_info } = res.result
+      $('.header_lo_text').text(ad_info.city)
+    })
+  </script>
   <!-- 导航条begin -->
   <nav>
     <div class="container nav p-0">
       <div class="d-flex align-items-center nav_row">
         <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
-          供需平台
+          <img src="./images/header_icon.png" alt="">
         </a>
         <div class="col mr-1">
           <!-- 搜索 -->
           <div class="row search flex-nowrap">
             <div class="search_left text-center">
-              搜索网站
+              搜索本站
             </div>
             <input class="col search_input border-0" type="text">
             <div class="mr-4 search_icon d-flex align-items-center">
@@ -196,7 +205,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布供应信息
+              发布供应
             </div>
           </div>
         </a>
@@ -211,7 +220,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布需求信息
+              发布需求
             </div>
           </div>
         </a>
@@ -225,13 +234,13 @@
     <div class="container nav p-0">
       <div class="d-flex align-items-center nav_row">
         <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
-          供需平台
+          <img src="./images/header_icon.png" alt="">
         </a>
         <div class="col mr-1">
           <!-- 搜索 -->
           <div class="row search flex-nowrap">
             <div class="search_left text-center">
-              搜索网站
+              搜索本站
             </div>
             <input class="col search_input border-0" type="text">
             <div class="mr-4 search_icon d-flex align-items-center">
@@ -255,7 +264,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布供应信息
+              发布供应
             </div>
           </div>
         </a>
@@ -270,7 +279,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布需求信息
+              发布需求
             </div>
           </div>
         </a>
@@ -287,17 +296,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <a href="">
-              <img src="./images/lunbo.jpg" alt="">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="">
-              <img src="./images/lunbo.jpg" alt="">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="">
-              <img src="./images/lunbo.jpg" alt="">
+              <img src="./images/slide2.jpg" alt="">
             </a>
           </div>
         </div>
@@ -338,7 +337,7 @@
                   <!-- 注册账号 -->
                   <div class="slide_item swiper-slide w-100 h-100" data-hash="buyrecode">
                     <form>
-                      <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <div class="form-group row flex-nowrap justify-content-center mt-3">
                         <input type="text" class=" input_wrap" placeholder="输入手机号" name="siginTel">
                       </div>
                       <!-- 验证码 -->
@@ -352,16 +351,16 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <div class="form-group row flex-nowrap justify-content-center mt-3">
                         <input type="password" class="input_wrap" placeholder="设置密码" name="siginPassword">
                       </div>
-                      <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <div class="form-group row flex-nowrap justify-content-center mt-3">
                         <input type="text" class="input_wrap" placeholder="设置用户名" name="name">
                       </div>
                       <div class="row justify-content-center mt-2">
                         <button type="submit" class="btn btn-p">注册</button>
                       </div>
-                      <div class="input-group row justify-content-center align-items-center ml-0 mt-3">
+                      <div class="input-group row justify-content-center align-items-center ml-0 mt-0">
                         <div class="form-check">
                           <label class="form-check-label align-items-center d-flex"
                             style="color: #666666;font-size: 12px;">
@@ -375,10 +374,10 @@
                   <!-- 账号登录 -->
                   <div class="slide_item swiper-slide w-100 h-100" data-hash="usedrecode">
                     <form>
-                      <div class="form-group row flex-nowrap justify-content-center mt-5">
+                      <div class="form-group row flex-nowrap justify-content-center mt-3">
                         <input type="email" class=" input_wrap" id="email" placeholder="输入手机号/用户名 ">
                       </div>
-                      <div class="form-group row flex-nowrap justify-content-center mt-4">
+                      <div class="form-group row flex-nowrap justify-content-center mt-3">
                         <input type="password" class="input_wrap" placeholder="输入密码" id="pwd">
                       </div>
                       <div class="row flex-nowrap justify-content-center verity_pic_btn">
@@ -597,8 +596,8 @@
             </svg>
           </div>
           <div class="location_change ml-4 d-flex align-items-center">
-            <span class="text-truncate d-inline-block" style="width: 70px;">默认吧</span>
-            <span class="header_location_change" style="cursor: pointer;">[切换]</span>
+            <span class="text-truncate d-inline-block" style="width: 70px;" id="supply_location_text">默认吧</span>
+            <span class="header_location_change" style="cursor: pointer;" id="supply_change_btn">[切换]</span>
           </div>
         </div>
 
@@ -846,8 +845,8 @@
             </svg>
           </div>
           <div class="location_change ml-4 d-flex align-items-center">
-            <span class="text-truncate d-inline-block" style="width: 70px;">默认吧</span>
-            <span class="header_location_change" style="cursor: pointer;">[切换]</span>
+            <span class="text-truncate d-inline-block" style="width: 70px;" id="need_location">默认吧</span>
+            <span class="header_location_change" style="cursor: pointer;" id="need_change_btn">[切换]</span>
           </div>
         </div>
 
@@ -863,7 +862,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -875,7 +874,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -887,7 +886,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -899,7 +898,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -911,7 +910,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -923,7 +922,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -935,7 +934,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -947,7 +946,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -959,7 +958,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -971,7 +970,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -983,7 +982,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -995,7 +994,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1007,7 +1006,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1019,7 +1018,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1031,7 +1030,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1043,7 +1042,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1055,7 +1054,7 @@
                 <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
                 <div class="date_wrap d-flex align-items-center">
                   <p class="date mb-0">发布日期：2020/07/18</p>
-                  <span class="cate ml-1" style="background: #1A8EFF;">供应</span>
+                  <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
                 </div>
               </a>
             </li>
@@ -1131,7 +1130,7 @@
 
 </body>
 <!-- 选择位置 -->
-<div class="location_change_wrap shadow-sm">
+<div class="location_change_wrap shadow-sm supply_location_wrap">
   <div class="info d-flex align-items-center justify-content-center h-100 w-100">
     <div>
       <select id="s_province" name="s_province"></select>  
@@ -1142,11 +1141,35 @@
   </div>
 </div>
 
+<!-- 需求 -->
+<div class="location_change_wrap shadow-sm location_change_need">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="n_province" name="n_province"></select>  
+      <select id="n_city" name="n_city"></select>  
+      <select id="n_county" name="n_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_need">切换need</btn>
+  </div>
+</div>
+
+<!-- 顶部 -->
+<div class="location_change_wrap shadow-sm location_change_top">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="t_province" name="t_province"></select>  
+      <select id="t_city" name="t_city"></select>  
+      <select id="t_county" name="t_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_top_btn">切换顶部</btn>
+  </div>
+</div>
+
 <!-- 消息列表 -->
 <div class="notice_list_wrap ">
   <span class=" caret position-absolute"></span>
   <!-- <div class="header_notice_title w-100 d-flex justify-content-center pt-3 pb-3">我的私信</div> -->
-  <div class="search d-flex flex-nowrap align-items-center mt-2 ">
+  <div class="search d-flex flex-nowrap align-items-center mt-2 mb-2">
 
     <input class="col search_input border-0" type="text" placeholder="搜索需求">
     <div class="mr-4 search_icon d-flex align-items-center">
@@ -1159,7 +1182,7 @@
     </div>
   </div>
   <div class="ul_wrap">
-    <ul class="notice_li_ul p-3 mt-2">
+    <ul class="notice_li_ul pl-3 pr-3">
       <li class="new_notice_li pt-3 pb-3">
         <a href="javascript:void(0)" class="text-decoration-none">
           <div class="avatar_wrap">
@@ -1394,13 +1417,18 @@
   // 初始化位置
   function initArea() {
     _init_area(["s_province", "s_city", "s_county"])
+    _init_area(["n_province", "n_city", "n_county"])
+    _init_area(["t_province", "t_city", "t_county"])
+
     changeLocation()
+    changeLocationneed()
+    changeLocationTop()
   }
 
   // 位置选择方法
   function changeLocation() {
     // 点击显示切换的位置选择
-    $('.header_location_change').click(function (e) {
+    $('#supply_change_btn').click(function (e) {
       console.log(e);
       console.log(e.clientX);
       console.log(e.clientY);
@@ -1414,7 +1442,53 @@
         title: false, //不显示标题
         area: ['430px', '100px'],
         offset: [top, left],
-        content: $('.location_change_wrap'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        content: $('.supply_location_wrap'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      filterUndefined([getpro, getcity, getarea], '#supply_location_text')
+
+    })
+  }
+
+  function filterUndefined(arry, el) {
+    let filter_arry = ["省份", "地级市", "市、县级市"]
+    console.log(arry);
+    let newArry = []
+    filter_arry.forEach(function (value, index) {
+      console.log(value);
+      if (arry[index] !== value) {
+        newArry.push(arry[index])
+      }
+    })
+    $(el).text(newArry[newArry.length - 1])
+    console.log(newArry[newArry.length - 1]);
+  }
+
+  // need位置选择方法
+  function changeLocationneed() {
+    // 点击显示切换的位置选择
+    $('#need_change_btn').click(function (e) {
+      console.log(e);
+
+      // let top = `${e.clientY + 30}px`
+      let top = e.clientY + 30 + 'px'
+      // let left = `${e.clientX - 250}px`
+      let left = e.clientX - 250 + 'px'
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.location_change_need'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
         cancel: function () {
 
         }
@@ -1429,15 +1503,54 @@
     })
   }
 
+  // 顶部位置选这方法
+  function changeLocationTop() {
+    // 点击显示切换的位置选择
+    $('#top_change_btn').click(function (e) {
+      console.log(e);
+
+      // let top = `${e.clientY + 30}px`
+      let top = e.clientY + 30 + 'px'
+      // let left = `${e.clientX - 250}px`
+      let left = e.clientX - 250 + 'px'
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.location_change_top'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      alert(getpro + " " + getcity + " " + getarea);
+    })
+  }
+
+
+
   // 自动获取定位
   function autoGetLocation() {
-    // 获取地址
-    let ll = new MyLocation()
+    
 
-    ll.getLoaction(function (res) {
+    let top = new MyLocation()
+    top.getLoaction(function (res) {
       let { ad_info } = res.result
-      $('.header_lo_text').text(ad_info.city)
+      $('#supply_location_text').text(ad_info.city)
     })
+    let right = new MyLocation()
+    right.getLoaction(function (res) {
+      let { ad_info } = res.result
+      $('#need_location').text(ad_info.city)
+    })
+
   }
 
   // 自动定位

@@ -25,8 +25,8 @@ class MyLocation {
     $.ajax({
       url: `https://apis.map.qq.com/ws/location/v1/ip?output=jsonp&key=${key}`,
       dataType: "jsonp",
-      jsonp: "callback",
-      jsonpCallback: 'getLocat',
+      // jsonp: "callback",
+      // jsonpCallback: 'getLocat',
       type: 'get',
       success: function (res) {
         cb(res)

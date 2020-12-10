@@ -32,6 +32,7 @@
       font-weight: 400;
       color: #333333;
     }
+
     .form-control {
       width: 463px;
       height: 40px;
@@ -49,8 +50,8 @@
 
     .textarea-control {
       width: 463px;
-      min-height: 60px;
-      max-height: 300px;
+      min-height: 90px;
+      max-height: 480px;
       background: #FFFFFF;
       border: 1px solid #CCCCCC;
     }
@@ -77,15 +78,42 @@
     .pic_group {
       width: 463px;
 
-      .pic_wrap {
-        width: 87px;
-        height: 87px;
-        background-color: #EEEEEE;
+      .pic_group_wrap {
+        display: flex;
 
-        img {
+        .pic_wrap {
+          position: relative;
           width: 87px;
           height: 87px;
-          object-fit: cover;
+          background-color: #EEEEEE;
+
+          img {
+            width: 87px;
+            height: 87px;
+            object-fit: cover;
+          }
+
+          .delbtn {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 87px;
+            height: 87px;
+            background-color: #c2c2c2;
+            text-align: center;
+            line-height: 87px;
+            cursor: pointer;
+
+            svg {
+              width: 25px;
+              height: 25px;
+
+              path {
+                fill: #ffffff;
+              }
+            }
+          }
         }
       }
 
@@ -99,6 +127,7 @@
         font-weight: normal;
 
         button {
+          width: 60px;
           color: #319595;
         }
       }

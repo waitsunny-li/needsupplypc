@@ -54,7 +54,7 @@
       font-weight: 600;
     }
   </style>
-  <title>发布供应信息</title>
+  <title>发布供应</title>
 </head>
 
 <body class="body">
@@ -123,13 +123,13 @@
     <div class="container nav p-0">
       <div class="d-flex align-items-center nav_row">
         <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
-          供需平台
+          <img src="./images/header_icon.png" alt="">
         </a>
         <div class="col mr-1">
           <!-- 搜索 -->
           <div class="row search flex-nowrap">
             <div class="search_left text-center">
-              搜索网站
+              搜索本站
             </div>
             <input class="col search_input border-0" type="text">
             <div class="mr-4 search_icon d-flex align-items-center">
@@ -153,7 +153,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布供应信息
+              发布供应
             </div>
           </div>
         </a>
@@ -168,7 +168,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布需求信息
+              发布需求
             </div>
           </div>
         </a>
@@ -182,13 +182,13 @@
     <div class="container nav p-0">
       <div class="d-flex align-items-center nav_row">
         <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
-          供需平台
+          <img src="./images/header_icon.png" alt="">
         </a>
         <div class="col mr-1">
           <!-- 搜索 -->
           <div class="row search flex-nowrap">
             <div class="search_left text-center">
-              搜索网站
+              搜索本站
             </div>
             <input class="col search_input border-0" type="text">
             <div class="mr-4 search_icon d-flex align-items-center">
@@ -212,7 +212,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布供应信息
+              发布供应
             </div>
           </div>
         </a>
@@ -227,7 +227,7 @@
               </svg>
             </div>
             <div class="right_pub text-center ml-4">
-              发布需求信息
+              发布需求
             </div>
           </div>
         </a>
@@ -242,7 +242,7 @@
     <div class="container bread_wrap p-0">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">供需平台</a></li>
-        <li class="breadcrumb-item"><a href="#">发布供应信息</a></li>
+        <li class="breadcrumb-item"><a href="#">发布供应</a></li>
       </ol>
     </div>
   </section>
@@ -252,25 +252,33 @@
   <section>
     <div class="container publish_body mt-5 mb-5">
       <form class="w-100">
-        <div class="form-group d-flex justify-content-between align-items-center">
-          <label for="title">供应标题</label>
-          <input type="text" class="form-control" id="title">
+        <div class="form-group d-flex justify-content-between align-items-center position-relative">
+          <label for="title">标题</label>
+          <input type="text" class="form-control" id="title" title="jfksdfsdikfj">
+          <div class="number_wrap position-absolute" style="right:-55px;bottom: 10px;">
+            <span class="title_import">0</span>
+            <span class="limit">/ 50</span>
+          </div>
         </div>
 
         <!-- 供应描述 -->
         <div class="form-group d-flex justify-content-between mt-1 position-relative">
-          <label for="desc">供应描述</label>
+          <label for="desc">描述</label>
           <textarea type="text" class="textarea-control" id="desc" style="overflow-y: auto;"></textarea>
           <div class="number_wrap position-absolute">
             <span class="import">0</span>
-            <span class="limit">/300</span>
+            <span class="limit">/ 500</span>
           </div>
         </div>
 
         <!-- 供需物品 -->
-        <div class="form-group d-flex justify-content-between align-items-center mt-1">
-          <label for="goods">供应物品</label>
+        <div class="form-group d-flex justify-content-between align-items-center mt-1 position-relative">
+          <label for="goods">物品</label>
           <input type="text" class="form-control" id="goods">
+          <div class="number_wrap position-absolute" style="right:-55px;bottom: 10px;">
+            <span class="goods_import">0</span>
+            <span class="limit">/ 50</span>
+          </div>
         </div>
 
         <!-- 发布地址 -->
@@ -287,37 +295,18 @@
         <div class="form-group d-flex justify-content-between mt-1">
           <label for="">上传图片</label>
           <div class="pic_group d-flex flex-nowrap">
-            <div class="pic_wrap d-flex justify-content-center align-items-center">
-              <svg t="1605343519835" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="5109" width="30" height="30">
-                <path
-                  d="M973.609745 750.236863 853.432379 750.236863 853.432379 630.039569c0-26.709513-20.033381-46.743891-46.743891-46.743891s-46.743891 20.034377-46.743891 46.743891l0 126.87542L626.391052 756.914989c-26.709513 0-46.743891 20.033381-46.743891 46.743891s20.033381 46.743891 46.743891 46.743891l126.87542 0 0 126.855492c0 26.709513 20.033381 46.743891 46.743891 46.743891 26.709513 0 46.743891-20.034377 46.743891-46.743891L846.754254 850.40277 973.609745 850.40277c26.711506 0 46.743891-20.032384 46.743891-46.743891C1027.031761 776.949366 1000.322248 750.236863 973.609745 750.236863L973.609745 750.236863 973.609745 750.236863zM505.222231 871.609954 505.222231 871.609954 87.137882 871.609954c-15.500585 0-27.135989-11.634407-27.135989-27.175846l0-759.112174c0-15.511546 11.635403-27.145953 27.135989-27.145953l740.858431 0c15.47966 0 27.11606 11.635403 27.11606 27.145953l0 410.313131 0 0 0 0c0 15.500585 11.656329 27.136985 27.176843 27.136985 15.499589 0 27.135989-11.6364 27.135989-27.136985l0 0 0 0L909.425205 58.176977c0-31.031064-27.135989-58.178014-58.177017-58.178014L60.000897-0.001036C28.979797-0.001036 1.82388 27.145913 1.82388 58.176977l0 813.432977c0 31.001171 27.155918 58.157088 58.177017 58.157088l445.221334 0 0 0c15.499589 0 27.135989-11.656329 27.135989-27.155918C532.356226 883.224433 520.720823 871.609954 505.222231 871.609954L505.222231 871.609954 505.222231 871.609954zM499.513639 736.881608c20.033381-40.065765 66.777271-66.777271 113.521162-66.777271l53.42102 0 0-60.098149c0-53.422016 33.389632-100.165907 80.132526-120.198291l0 0 0 0-66.776275-200.319857-233.718457 300.485763-66.777271-106.843036L132.261565 736.881608 499.513639 736.881608 499.513639 736.881608 499.513639 736.881608zM379.316344 309.51046c0-40.054804-33.388636-73.444436-73.453404-73.444436s-73.454401 33.389632-73.454401 73.444436c0 40.066761 33.388636 73.454401 73.454401 73.454401S379.316344 349.577221 379.316344 309.51046L379.316344 309.51046 379.316344 309.51046z"
-                  p-id="5110" fill="#333333"></path>
-              </svg>
-            </div>
-            <div class="pic_wrap d-flex justify-content-center align-items-center ml-3">
+            <div class="pic_group_wrap">
 
-              <svg t="1605343519835" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="5109" width="30" height="30">
-                <path
-                  d="M973.609745 750.236863 853.432379 750.236863 853.432379 630.039569c0-26.709513-20.033381-46.743891-46.743891-46.743891s-46.743891 20.034377-46.743891 46.743891l0 126.87542L626.391052 756.914989c-26.709513 0-46.743891 20.033381-46.743891 46.743891s20.033381 46.743891 46.743891 46.743891l126.87542 0 0 126.855492c0 26.709513 20.033381 46.743891 46.743891 46.743891 26.709513 0 46.743891-20.034377 46.743891-46.743891L846.754254 850.40277 973.609745 850.40277c26.711506 0 46.743891-20.032384 46.743891-46.743891C1027.031761 776.949366 1000.322248 750.236863 973.609745 750.236863L973.609745 750.236863 973.609745 750.236863zM505.222231 871.609954 505.222231 871.609954 87.137882 871.609954c-15.500585 0-27.135989-11.634407-27.135989-27.175846l0-759.112174c0-15.511546 11.635403-27.145953 27.135989-27.145953l740.858431 0c15.47966 0 27.11606 11.635403 27.11606 27.145953l0 410.313131 0 0 0 0c0 15.500585 11.656329 27.136985 27.176843 27.136985 15.499589 0 27.135989-11.6364 27.135989-27.136985l0 0 0 0L909.425205 58.176977c0-31.031064-27.135989-58.178014-58.177017-58.178014L60.000897-0.001036C28.979797-0.001036 1.82388 27.145913 1.82388 58.176977l0 813.432977c0 31.001171 27.155918 58.157088 58.177017 58.157088l445.221334 0 0 0c15.499589 0 27.135989-11.656329 27.135989-27.155918C532.356226 883.224433 520.720823 871.609954 505.222231 871.609954L505.222231 871.609954 505.222231 871.609954zM499.513639 736.881608c20.033381-40.065765 66.777271-66.777271 113.521162-66.777271l53.42102 0 0-60.098149c0-53.422016 33.389632-100.165907 80.132526-120.198291l0 0 0 0-66.776275-200.319857-233.718457 300.485763-66.777271-106.843036L132.261565 736.881608 499.513639 736.881608 499.513639 736.881608 499.513639 736.881608zM379.316344 309.51046c0-40.054804-33.388636-73.444436-73.453404-73.444436s-73.454401 33.389632-73.454401 73.444436c0 40.066761 33.388636 73.454401 73.454401 73.454401S379.316344 349.577221 379.316344 309.51046L379.316344 309.51046 379.316344 309.51046z"
-                  p-id="5110" fill="#333333"></path>
-              </svg>
-            </div>
-            <div class="pic_wrap d-flex justify-content-center align-items-center ml-3">
 
-              <svg t="1605343519835" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="5109" width="30" height="30">
-                <path
-                  d="M973.609745 750.236863 853.432379 750.236863 853.432379 630.039569c0-26.709513-20.033381-46.743891-46.743891-46.743891s-46.743891 20.034377-46.743891 46.743891l0 126.87542L626.391052 756.914989c-26.709513 0-46.743891 20.033381-46.743891 46.743891s20.033381 46.743891 46.743891 46.743891l126.87542 0 0 126.855492c0 26.709513 20.033381 46.743891 46.743891 46.743891 26.709513 0 46.743891-20.034377 46.743891-46.743891L846.754254 850.40277 973.609745 850.40277c26.711506 0 46.743891-20.032384 46.743891-46.743891C1027.031761 776.949366 1000.322248 750.236863 973.609745 750.236863L973.609745 750.236863 973.609745 750.236863zM505.222231 871.609954 505.222231 871.609954 87.137882 871.609954c-15.500585 0-27.135989-11.634407-27.135989-27.175846l0-759.112174c0-15.511546 11.635403-27.145953 27.135989-27.145953l740.858431 0c15.47966 0 27.11606 11.635403 27.11606 27.145953l0 410.313131 0 0 0 0c0 15.500585 11.656329 27.136985 27.176843 27.136985 15.499589 0 27.135989-11.6364 27.135989-27.136985l0 0 0 0L909.425205 58.176977c0-31.031064-27.135989-58.178014-58.177017-58.178014L60.000897-0.001036C28.979797-0.001036 1.82388 27.145913 1.82388 58.176977l0 813.432977c0 31.001171 27.155918 58.157088 58.177017 58.157088l445.221334 0 0 0c15.499589 0 27.135989-11.656329 27.135989-27.155918C532.356226 883.224433 520.720823 871.609954 505.222231 871.609954L505.222231 871.609954 505.222231 871.609954zM499.513639 736.881608c20.033381-40.065765 66.777271-66.777271 113.521162-66.777271l53.42102 0 0-60.098149c0-53.422016 33.389632-100.165907 80.132526-120.198291l0 0 0 0-66.776275-200.319857-233.718457 300.485763-66.777271-106.843036L132.261565 736.881608 499.513639 736.881608 499.513639 736.881608 499.513639 736.881608zM379.316344 309.51046c0-40.054804-33.388636-73.444436-73.453404-73.444436s-73.454401 33.389632-73.454401 73.444436c0 40.066761 33.388636 73.454401 73.454401 73.454401S379.316344 349.577221 379.316344 309.51046L379.316344 309.51046 379.316344 309.51046z"
-                  p-id="5110" fill="#333333"></path>
-              </svg>
             </div>
+
             <div class="pic_upload d-flex justify-content-center align-items-center ml-3">
               <button class="btn upload_btn">上传</button>
-              <input type="file" name="file" class="pic_upload_btn" accept="image/*" hidden>
+              <input type="file" name="file" class="pic_upload_btn" accept="image/*" multiple hidden>
             </div>
           </div>
+
+
         </div>
 
         <button type="submit" class="btn submit_btn text-white mt-3">发布</button>
@@ -359,7 +348,7 @@
 <div class="notice_list_wrap ">
   <span class=" caret position-absolute"></span>
   <!-- <div class="header_notice_title w-100 d-flex justify-content-center pt-3 pb-3">我的私信</div> -->
-  <div class="search d-flex flex-nowrap align-items-center mt-2 ">
+  <div class="search d-flex flex-nowrap align-items-center mt-2 mb-2">
 
     <input class="col search_input border-0" type="text" placeholder="搜索需求">
     <div class="mr-4 search_icon d-flex align-items-center">
@@ -372,7 +361,7 @@
     </div>
   </div>
   <div class="ul_wrap">
-    <ul class="notice_li_ul p-3 mt-2">
+    <ul class="notice_li_ul pl-3 pr-3">
       <li class="new_notice_li pt-3 pb-3">
         <a href="javascript:void(0)" class="text-decoration-none">
           <div class="avatar_wrap">
@@ -550,42 +539,58 @@
 
 <script src="./js/common.min.js"></script>
 <script>
-  // 上传图片
-  $('.upload_btn').click(function (event) {
-    event.preventDefault();
-    // 判断上传三次不能再上传
-    if ($('.pic_wrap').find('img').length == 3) {
-      layer.msg('亲，不能在添加了！', {
-        icon: 2,
-        time: 2000 //2秒关闭（如果不配置，默认是3秒）
-      });
-    } else {
-      $('.pic_upload_btn').click()
-    }
-  })
-
-  // 增加图片
-  function addImg(url) {
-    // 检测是否有img标签
-    for (let i = 0; i < $('.pic_wrap').length; i++) {
-      if ($('.pic_wrap').eq(i).find('img').length == 0) {
-        console.log(i);
-        $('.pic_wrap').eq(i).html(`
-        <img src="${url}" alt="">`)
-        return;
+  function limitText() {
+    // 供需物品
+    checkTextNumber('#goods', function (textlen) {
+      $('.goods_import').text(textlen)
+      if (textlen > 50) {
+        $('.number_wrap').css({
+          'color': 'red'
+        })
+      } else {
+        $('.number_wrap').css({
+          'color': '#999999'
+        })
       }
-    }
+    })
+    // 标题
+    checkTextNumber('#title', function (textlen) {
+      $('.title_import').text(textlen)
+      if (textlen > 50) {
+        $('.number_wrap').css({
+          'color': 'red'
+        })
+      } else {
+        $('.number_wrap').css({
+          'color': '#999999'
+        })
+      }
+    })
+    // 描述
+    checkTextNumber('#desc', function (textlen) {
+      $('.import').text(textlen)
+      let contentH = $('.body').height()
+      if (contentH > 740) {
+        $('.footer').removeClass('footer_fixed')
+      }
+      if (textlen > 500) {
+        $('.number_wrap').css({
+          'color': 'red'
+        })
+      } else {
+        $('.number_wrap').css({
+          'color': '#999999'
+        })
+      }
+    })
+
   }
 
-  // 文件上传事件
-  $('.pic_upload_btn').change(function (e) {
-    addImg('./images/goods1.png')
-  })
 
   // 初始化位置
   function initArea() {
     _init_area(["s_province", "s_city", "s_county"])
-    _init_area(["p_province", "p_city", "p_county"])
+
     changeLocation()
   }
 
@@ -626,7 +631,11 @@
 
     ll.getLoaction(function (res) {
       let ad_info = res.result.ad_info
-      $('.header_lo_text').text(ad_info.city)
+      let province = ad_info.province
+      let city = ad_info.city
+      let district = ad_info.district
+      $('.header_lo_text').text(city)
+      _init_area(["p_province", "p_city", "p_county"], [province, city, district])
     })
   }
 
@@ -636,17 +645,93 @@
   // 初始化位置
   initArea()
 
-  checkTextNumber('#desc', function (textlen) {
-    $('.import').text(textlen)
-    let contentH = $('.body').height()
-    if (contentH > 740) {
-      $('.footer').removeClass('footer_fixed')
+  // 文字限制
+  limitText()
+</script>
+
+<!-- 图片上传 -->
+<script>
+  let imageFile = []
+  // 增加图片
+  function addImg(url) {
+    $('.pic_group_wrap').append(`
+        <div class="pic_wrap d-flex justify-content-center align-items-center mr-3">
+          <img src="${url}" alt="">
+          <div class="delbtn">
+                  <svg t="1605776998440" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2857" width="30" height="30">
+                    <path
+                      d="M845.12256 287.55456v572.62592c0 15.77984 10.89024 86.44096-15.2576 86.44096H247.7568c-11.74528 0-36.38784 4.56704-37.92384-12.53888-0.90112-10.0352 0-20.57216 0-30.63296V287.55968c0-33.01888-51.2-33.01888-51.2 0v572.62592c0 44.94848-10.20416 99.40992 31.56992 128.94208 15.00672 10.60352 35.80928 8.69888 53.31968 8.69888h531.38432c48.04096 0 121.41568 6.58432 121.41568-63.7952V287.55968c0-33.024-51.2-33.024-51.2-0.00512z"
+                      p-id="2858" fill="#ffffff"></path>
+                    <path
+                      d="M501.86752 420.46976v361.33888c0 33.01376 51.22048 33.01376 51.22048 0V420.46976c0-33.01888-51.22048-33.01888-51.22048 0zM325.35552 420.46976v361.33888c0 33.01376 51.2 33.01376 51.2 0V420.46976c0-33.01888-51.2-33.01888-51.2 0zM676.00384 420.46976v361.33888c0 33.01376 51.2 33.01376 51.2 0V420.46976c0-33.01888-51.2-33.01888-51.2 0zM102.5024 217.5232h849.95584c33.01376 0 33.01376-51.2 0-51.2H102.5024c-33.01888 0-33.01888 51.2 0 51.2z"
+                      p-id="2859" fill="#ffffff"></path>
+                    <path
+                      d="M338.7648 174.82752V94.53056c0-18.37056 1.00864-30.9248 21.6832-30.9248h334.0544c20.67456 0 21.6832 12.55424 21.6832 30.9248v80.29696c0 33.01888 51.2 33.01888 51.2 0 0-54.73792 18.51392-162.42176-65.26464-162.42176H352.82432c-83.77344 0-65.25952 107.68384-65.25952 162.42176 0 33.01888 51.2 33.01888 51.2 0z"
+                      p-id="2860" fill="#ffffff"></path>
+                  </svg>
+                </div>
+      </div>`)
+    // 重新运行
+    listenMoverDisplayDelBtn()
+    removeImg()
+  }
+
+  // 删除图片
+  function removeImg() {
+    let picWrap = $('.pic_group_wrap').find('.pic_wrap')
+    picWrap.click(function () {
+      let _this = $(this)
+      let index = _this.index()
+      layer.confirm('是否要删除该图片?', { icon: 5, title: '提示', btn: ['删除', '丑拒'] }, function () {
+        // 删除元素节点
+        _this.remove()
+        imageFile.splice(index, 1)
+        layer.msg('删除成功！', { icon: 1 });
+        console.log(imageFile);
+      });
+    })
+  }
+  removeImg()
+
+  // 显示删除图片按钮
+  function listenMoverDisplayDelBtn() {
+    let picWrap = $('.pic_group_wrap').find('.pic_wrap')
+    picWrap.mouseover(function () {
+      $(this).find('.delbtn').stop().fadeIn()
+    })
+
+    picWrap.mouseleave(function () {
+      $(this).find('.delbtn').stop().fadeOut()
+    })
+  }
+
+  listenMoverDisplayDelBtn()
+
+  // 上传图片
+  $('.upload_btn').click(function (event) {
+    event.preventDefault();
+    // 判断上传三次不能再上传
+    if ($('.pic_wrap').find('img').length == 5) {
+      layer.msg('亲，不能在添加了！', {
+        icon: 2,
+        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+      });
+    } else {
+      $('.pic_upload_btn').click()
     }
-    if (textlen > 300) {
-      $('.number_wrap').css({
-        'color': 'red'
-      })
-    }
+  })
+
+
+  // 文件上传事件
+  $('.pic_upload_btn').change(function (e) {
+    console.log(this.files);
+    imageFile.push(this.files[0])
+    let url = window.URL.createObjectURL(this.files[0])
+    console.log(url);
+    // 添加图片
+    addImg(url)
+    console.log(imageFile);
   })
 
 </script>
@@ -772,4 +857,5 @@
   })
 
 </script>
+
 </html>

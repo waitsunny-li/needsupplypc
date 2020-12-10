@@ -1,6 +1,6 @@
 <!--
  * @Author: liweilong
- * @Date: 2020-11-14 15:32:46
+ * @Date: 2020-12-08 12:19:56
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -12,33 +12,79 @@
   <link rel="stylesheet" href="./css/init.min.css">
   <link rel="stylesheet" href="./js/tool/bootstrap4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./js/tool/layer/theme/default/layer.css">
-  <link rel="stylesheet" href="./css/profile.css">
   <link rel="stylesheet" href="./css/chat.css">
+  <link rel="stylesheet" href="./css/supplyneed.css">
+  <link rel="stylesheet" href="./js/tool/swiper.min.css">
+  <link rel="stylesheet" href="./css/verifypic.css">
   <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/location.min.js"></script>
+  <script src="./js/tool/swiper.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
+  <script src="./js/verifypic.min.js"></script>
   <script src="./js/tool/topbar.min.js"></script>
-
+  <script src="./js/tool/funlazy.min.js"></script>
+  <script src="./js/dropLoad.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
   <script src="./js/pcasunzip.min.js"></script>
+
+  <!-- 供应模板 -->
+  <script type="text/html" id="search_supply_temp">
+    {{ each dataList }}
+    <li class="goods_li mb-5">
+      <a href="goods_detail.html" class="text-decoration-none">
+        <div class="img_wrap">
+          <img data-funlazy="./images/goods1.png" alt="">
+        </div>
+        <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+        <div class="date_wrap d-flex align-items-center">
+          <p class="date mb-0">发布日期：2020/07/18</p>
+          <span class="cate ml-1" style="background: #dc3173;">供应</span>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+
+  <!-- 需求模板 -->
+  <script type="text/html" id="search_need_temp">
+    {{ each dataList }}
+    <li class="goods_li mb-5">
+      <a href="goods_detail.html" class="text-decoration-none">
+        <div class="img_wrap">
+          <img data-funlazy="./images/goods2.png" alt="">
+        </div>
+        <p class="goods_name text-truncate pt-1 mb-1">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
+        <div class="date_wrap d-flex align-items-center">
+          <p class="date mb-0">发布日期：2020/07/18</p>
+          <span class="cate ml-1" style="background: #1A8EFF;">需求</span>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+
   <!-- 自己发送的聊天模板 -->
   <script type="text/html" id="chat_mine_data">
-  <li class="chat_li_mine">
-    <div class="avatar_wrap">
-      <div class="ava_img">
-        <img src="{{mine_image_src}}"
-          alt="">
+    <li class="chat_li_mine">
+      <div class="avatar_wrap">
+        <div class="ava_img">
+          <img src="{{mine_image_src}}"
+            alt="">
+        </div>
       </div>
-    </div>
-    <div class="chat_content">
-      <div class="chat_inner_content">
-        {{chat_content}}
+      <div class="chat_content">
+        <div class="chat_inner_content">
+          {{chat_content}}
+        </div>
       </div>
-    </div>
-  </li>
-</script>
-
+    </li>
+  </script>
   <style>
+    .no_content {
+      display: none;
+    }
+
     .layui-layer-page .layui-layer-content {
       overflow: hidden;
     }
@@ -51,11 +97,27 @@
       font-size: 17px;
       font-weight: 600;
     }
+
+    .pagination {}
+
+    .page-item {
+      margin: 0 5px;
+    }
+
+    .page-item .page-link {
+      border: 0 !important;
+      color: #999999;
+    }
+
+    .page-item.active .page-link {
+      background-color: #319595 !important;
+      border-radius: 3px;
+    }
   </style>
-  <title>个人中心</title>
+  <title>首页</title>
 </head>
 
-<body class="body">
+<body>
   <!-- 头部begin -->
   <header class="shadow-sm">
     <!-- 顶部begin -->
@@ -117,7 +179,7 @@
   </header>
 
   <!-- 导航条begin -->
-  <nav class="bg-white">
+  <nav>
     <div class="container nav p-0">
       <div class="d-flex align-items-center nav_row">
         <a href="index.html" class="header_text font-italic font-weight-bold text-decoration-none">
@@ -171,7 +233,7 @@
           </div>
         </a>
       </div>
-    </div> ·
+    </div>
   </nav>
   <!-- 导航条end -->
 
@@ -235,258 +297,92 @@
   <!-- 隐藏导航条end -->
   <!-- 头部end -->
 
-  <!-- 中间主体bengin -->
+  <!-- 供应需求主体begin -->
   <section>
-    <div class="container d-flex justify-content-between profile_content_wrap mt-3 mb-3">
-      <!-- 左边的条目 -->
-      <div class="left_item bg-white shadow-sm">
-        <ul class="w-100 d-flex flex-wrap profileulli">
-          <!-- 个人主页 -->
-          <li class="w-100 active">
-            <a href="profile.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1605406790415" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="4163" width="35" height="35">
-                <path
-                  d="M502.4 554.88a273.28 273.28 0 1 1 273.28-273.28 273.28 273.28 0 0 1-273.28 273.28z m0-483.84a210.56 210.56 0 1 0 210.56 210.56 211.2 211.2 0 0 0-210.56-210.56z"
-                  fill="#666666" p-id="4164"></path>
-                <path
-                  d="M624.64 1015.68h-576v-70.4a453.12 453.12 0 0 1 454.4-453.12 31.36 31.36 0 0 1 0 64 391.04 391.04 0 0 0-390.4 390.4v7.68h512a31.36 31.36 0 0 1 0 64z"
-                  fill="#666666" p-id="4165"></path>
-                <path
-                  d="M974.08 1015.68h-576a31.36 31.36 0 0 1 0-64h512v-7.68a391.04 391.04 0 0 0-390.4-390.4 31.36 31.36 0 0 1 0-64 453.12 453.12 0 0 1 453.12 453.12z"
-                  fill="#666666" p-id="4166"></path>
-              </svg>
-              <span class="text_icon ml-2">个人主页</span>
-            </a>
-          </li>
-          <!-- 我的发布 -->
-          <li class="w-100">
-            <a href="mypublish.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1603172715971" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="12817" width="35" height="35">
-                <path
-                  d="M956.6 133.3l-62.9-62.9c-8.5-8.5-22.6-8.5-31.2 0.2l-61.2 61.2c-8.8 8.8-8.8 22.7-0.2 31.2l62.9 62.9c8.5 8.5 22.6 8.5 31.2-0.2l61.2-61.2c8.8-8.8 8.8-22.7 0.2-31.2zM378.6 570.8l-19.7 81c-2.9 11.9 4.4 19.3 16.4 16.4l80.9-19.7c11.9-2.9 14.7-12.2 6.1-20.8l-62.9-62.9c-8.5-8.5-17.9-5.9-20.8 6z"
-                  fill="#666666" p-id="12818"></path>
-                <path
-                  d="M895.8 892.8c0 12.4-10 22.4-22.4 22.4H134.2c-12.4 0-22.4-10-22.4-22.4V153.6c0-12.4 10-22.4 22.4-22.4h515.2l44.8-44.8h-560c-37.1 0-67.2 30.1-67.2 67.2v739.2c0 37.1 30.1 67.2 67.2 67.2h739.2c37.1 0 67.2-30.1 67.2-67.2V310.4l-44.8 44.8v537.6z"
-                  fill="#666666" p-id="12819"></path>
-                <path
-                  d="M414.8 549.3l62.9 62.9c8.5 8.5 22.5 8.5 31.2-0.2l339.4-339.4c8.6-8.6 8.7-22.6 0.2-31.2l-62.9-62.9c-8.5-8.5-22.5-8.5-31.2 0.2L415 518.1c-8.7 8.6-8.8 22.6-0.2 31.2z"
-                  fill="#666666" p-id="12820"></path>
-              </svg>
-              <span class="text_icon ml-2">我的发布</span>
-            </a>
-          </li>
-          <!-- 我的消息 -->
-          <li class="w-100">
-            <a href="mypublish.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1605162668991" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="7537" width="20" height="20">
-                <path d="M236.8 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7538"
-                  fill="#666666"></path>
-                <path
-                  d="M985.6 38.4H38.4c-19.2 0-38.4 19.2-38.4 38.4v710.4c0 19.2 19.2 38.4 38.4 38.4h352c19.2 0 38.4-19.2 38.4-38.4s-12.8-38.4-38.4-38.4H76.8V115.2h864v627.2H627.2c-12.8 0-19.2 6.4-25.6 12.8l-192 192c-12.8 6.4-19.2 19.2-19.2 32 0 19.2 19.2 38.4 38.4 38.4 12.8 0 19.2-6.4 25.6-12.8l185.6-185.6h339.2c19.2 0 38.4-19.2 38.4-38.4v-704c6.4-19.2-12.8-38.4-32-38.4z"
-                  p-id="7539" fill="#666666"></path>
-                <path d="M512 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7540" fill="#666666">
-                </path>
-                <path d="M787.2 435.2m-44.8 0a44.8 44.8 0 1 0 89.6 0 44.8 44.8 0 1 0-89.6 0Z" p-id="7541"
-                  fill="#666666"></path>
-              </svg>
-              <span class="text_icon ml-2">我的消息</span>
-            </a>
-          </li>
-          <!-- 我的收藏 -->
-          <li class="w-100">
-            <a href="mycollect.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1602928260765" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="28718" width="25" height="25">
-                <path
-                  d="M267.3 482.5c-11.4 11.1-11.6 29.4-0.5 40.8 11.1 11.4 29.4 11.6 40.8 0.5 11.4-11.1 11.6-29.4 0.5-40.8-11.2-11.5-29.4-11.7-40.8-0.5zM363.8 546.9c-8.1-8.3-21.6-8.5-29.9-0.3l-4.1 4c-8.3 8.1-8.5 21.6-0.3 29.9l154.8 158.4c8.1 8.3 21.6 8.5 29.9 0.3l4.1-4c8.3-8.1 8.5-21.6 0.3-29.9L363.8 546.9z"
-                  fill="#666666" p-id="28719"></path>
-                <path
-                  d="M887.8 190.8c-51.7-55.2-124.7-86.9-200.4-86.9-63.9 0-126.2 22.5-175.3 63.5-49.2-40.9-111.4-63.5-175.3-63.5-75.7 0-148.7 31.7-200.3 86.9-100.9 107-95 282 13.2 390.2L476 907.2c9.6 9.6 22.5 15 36.1 15h0.1c13.7 0 26.5-5.3 36.1-15L874.5 581c107.9-108.5 113.8-283.5 13.3-390.2z m-51 351.4L512.2 867.5 187.6 543c-87.9-87.6-93.3-229.1-12.1-315.4 41.6-44.5 100.4-70 161.3-70h0.3c53.1 0 104.4 19.2 144.4 54 8.5 7.5 19.4 11.6 30.7 11.6s22.2-4.1 30.7-11.6c40.2-35.1 91.7-54.4 145.1-54.4 60.7 0 119.4 25.4 160.9 69.6 81.1 86.2 75.7 227.6-12.1 315.4z"
-                  fill="#666666" p-id="28720"></path>
-              </svg>
-              <span class="text_icon ml-2">我的收藏</span>
-            </a>
-          </li>
-          <!-- 我的关注 -->
-          <li class="w-100">
-            <a href="myattention.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1603333915422" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="1865" width="35" height="35">
-                <path
-                  d="M717.7 642.7c7.5-10.9 4.7-25.9-6.3-33.4-35.6-24.4-75.9-41-120.4-49.9 96.6-36.6 165.2-130 165.2-239.4 0-141.3-114.6-255.9-255.9-255.9s-255.9 114.7-255.9 256c0 111.6 71.4 206.5 171 241.5-45.4 9.4-87.3 25.7-125.4 48.8-51 31-94.9 74.1-130.4 128.1-59.9 91.1-75.1 181.2-75.7 185l-1.3 8.3c-2 13.1 7 25.4 20.1 27.4 1.2 0.2 2.5 0.3 3.7 0.3 11.6 0 21.9-8.5 23.7-20.4l1.2-8c0.5-2.9 14.8-84.7 68.4-166.3C271.6 655.5 376.8 600 512.3 600c66.7 0 124.6 16.5 172.1 48.9 10.9 7.6 25.8 4.8 33.3-6.2zM292.4 320.1c0-55.5 21.6-107.7 60.9-147s91.5-60.9 147-60.9 107.7 21.6 147 60.9 60.9 91.5 60.9 147-21.6 107.7-60.9 147-91.5 60.9-147 60.9-107.7-21.6-147-60.9-60.9-91.4-60.9-147zM936.5 784.1H832.9V680.5c0-13.3-10.7-24-24-24s-24 10.7-24 24v103.6H681.3c-13.3 0-24 10.7-24 24s10.7 24 24 24h103.6v103.6c0 13.3 10.7 24 24 24s24-10.7 24-24V832.1h103.6c13.3 0 24-10.7 24-24s-10.8-24-24-24z"
-                  p-id="1866" fill="#666666"></path>
-              </svg>
-              <span class="text_icon ml-2">我的关注</span>
-            </a>
-          </li>
-          <!-- 我的举报 -->
-          <li class="w-100">
-            <a href="myreport.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1603173949384" class="icon" viewBox="0 0 1088 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="18509" width="35" height="35">
-                <path
-                  d="M566.224 10.032a48 48 0 0 1 20.32 20.32l480.768 920.32a48 48 0 0 1-42.544 70.24H63.232a48 48 0 0 1-42.56-70.24l480.784-920.32a48 48 0 0 1 64.768-20.32zM544 52.576L63.232 972.896h961.536L544 52.576z m16 712.32a48 48 0 1 1 0 96 48 48 0 0 1 0-96z m0-416a44.272 44.272 0 0 1 44.128 47.84l-24.72 305.456a16 16 0 0 1-15.936 14.72h-7.36a16 16 0 0 1-15.952-14.736l-24.352-305.424A44.32 44.32 0 0 1 560 348.912z"
-                  p-id="18510" fill="#666666"></path>
-              </svg>
-              <span class="text_icon ml-2">我的举报</span>
-            </a>
-          </li>
-          <!-- 账户安全 -->
-          <li class="w-100">
-            <a href="mysafe.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1603173841905" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="17356" width="35" height="35">
-                <path
-                  d="M784.353808 341.542998a31.449631 31.449631 0 0 1-31.449631-31.449632 247.194103 247.194103 0 0 0-494.388206 0 31.449631 31.449631 0 0 1-31.449632 31.449632 32.078624 32.078624 0 0 1-31.449631-31.449632 310.093366 310.093366 0 0 1 620.186732 0 32.078624 32.078624 0 0 1-31.449632 31.449632zM824.609337 1024H199.390663a94.348894 94.348894 0 0 1-94.348894-94.348894V544.078624a94.348894 94.348894 0 0 1 94.348894-94.348894h625.218674a94.348894 94.348894 0 0 1 94.348894 94.348894v385.572482a94.977887 94.977887 0 0 1-94.348894 94.348894zM199.390663 512.628993a31.449631 31.449631 0 0 0-31.449631 31.449631v385.572482a31.449631 31.449631 0 0 0 31.449631 31.449631h625.218674a32.078624 32.078624 0 0 0 31.449631-31.449631V544.078624a31.449631 31.449631 0 0 0-31.449631-31.449631z"
-                  fill="#666666" p-id="17357"></path>
-                <path
-                  d="M227.066339 512.628993a32.078624 32.078624 0 0 1-31.449631-31.449632V314.496314a31.449631 31.449631 0 0 1 31.449631-31.449631 31.449631 31.449631 0 0 1 31.449632 31.449631v166.683047a31.449631 31.449631 0 0 1-31.449632 31.449632zM597.542998 768.628993H413.248157a32.078624 32.078624 0 0 1-31.449631-31.449632 31.449631 31.449631 0 0 1 31.449631-31.449631h184.294841a31.449631 31.449631 0 0 1 31.449631 31.449631 31.449631 31.449631 0 0 1-31.449631 31.449632z"
-                  fill="#666666" p-id="17358"></path>
-              </svg>
-              <span class="text_icon ml-2">账户安全</span>
-            </a>
-          </li>
-          <!-- 帮助 -->
-          <li class="w-100 border-bottom-0">
-            <a href="myhelp.html"
-              class="w-100 h-100 d-flex justify-content-center align-items-center text-decoration-none">
-              <svg t="1603174018857" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                xmlns="http://www.w3.org/2000/svg" p-id="18954" width="35" height="35">
-                <path
-                  d="M672 512c123.712 0 224 100.288 224 224S795.712 960 672 960 448 859.712 448 736s100.288-224 224-224z m96-449c35.346 0 64 28.654 64 64v384h-64V129H192v704h256v62H192c-35.346 0-64-28.654-64-64V127c0-35.346 28.654-64 64-64h576z m-96 512c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160-71.634-160-160-160z m32 129v128h-64V704h64z m-32-96c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32zM512 447v64H256v-64h256z m192-192v64H256v-64h448z"
-                  p-id="18955" fill="#666666"></path>
-              </svg>
-              <span class="text_icon ml-2">帮助</span>
-            </a>
-          </li>
-
-        </ul>
-      </div>
-      <!-- 中间的条目 -->
-      <div class="content_item pl-4 pr-4 shadow-sm bg-white">
-        <div class="w-100 content_header font-weight-bold pt-3 pb-3">
-          个人主页
+    <div class="container supply_need justify-content-between p-0 d-flex mt-4">
+      <!-- 供应 -->
+      <div class="supply_wrap w-100 wrap">
+        <div class="row justify-content-center pt-3 pb-3 header_title flex-nowrap align-items-center w-100">
+          <svg t="1607405089759" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="5391" width="20" height="20">
+            <path
+              d="M1024 963.7L756.8 696.5c60.2-73.6 96.5-167.5 96.5-269.8C853.3 191.4 661.9 0 426.7 0S0 191.4 0 426.7s191.4 426.7 426.7 426.7c102.3 0 196.3-36.3 269.8-96.5L963.7 1024l60.3-60.3zM426.7 768C238.5 768 85.3 614.9 85.3 426.7S238.5 85.3 426.7 85.3 768 238.5 768 426.7 614.9 768 426.7 768z"
+              fill="#ffffff" p-id="5392"></path>
+          </svg>
+          <span class="text_icon text-white ml-2">搜索内容</span>
         </div>
-        <!-- 修改内容 -->
-        <form class="w-100 mt-4 pl-2 pr-2">
-          <!-- 头像图片 -->
-          <div class="form-group d-flex justify-content-between ">
-            <label for="">修改头像</label>
-            <div class="pic_group d-flex flex-nowrap">
-              <div class="pic_wrap d-flex justify-content-center align-items-center">
-                <svg t="1605343519835" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="5109" width="30" height="30">
-                  <path
-                    d="M973.609745 750.236863 853.432379 750.236863 853.432379 630.039569c0-26.709513-20.033381-46.743891-46.743891-46.743891s-46.743891 20.034377-46.743891 46.743891l0 126.87542L626.391052 756.914989c-26.709513 0-46.743891 20.033381-46.743891 46.743891s20.033381 46.743891 46.743891 46.743891l126.87542 0 0 126.855492c0 26.709513 20.033381 46.743891 46.743891 46.743891 26.709513 0 46.743891-20.034377 46.743891-46.743891L846.754254 850.40277 973.609745 850.40277c26.711506 0 46.743891-20.032384 46.743891-46.743891C1027.031761 776.949366 1000.322248 750.236863 973.609745 750.236863L973.609745 750.236863 973.609745 750.236863zM505.222231 871.609954 505.222231 871.609954 87.137882 871.609954c-15.500585 0-27.135989-11.634407-27.135989-27.175846l0-759.112174c0-15.511546 11.635403-27.145953 27.135989-27.145953l740.858431 0c15.47966 0 27.11606 11.635403 27.11606 27.145953l0 410.313131 0 0 0 0c0 15.500585 11.656329 27.136985 27.176843 27.136985 15.499589 0 27.135989-11.6364 27.135989-27.136985l0 0 0 0L909.425205 58.176977c0-31.031064-27.135989-58.178014-58.177017-58.178014L60.000897-0.001036C28.979797-0.001036 1.82388 27.145913 1.82388 58.176977l0 813.432977c0 31.001171 27.155918 58.157088 58.177017 58.157088l445.221334 0 0 0c15.499589 0 27.135989-11.656329 27.135989-27.155918C532.356226 883.224433 520.720823 871.609954 505.222231 871.609954L505.222231 871.609954 505.222231 871.609954zM499.513639 736.881608c20.033381-40.065765 66.777271-66.777271 113.521162-66.777271l53.42102 0 0-60.098149c0-53.422016 33.389632-100.165907 80.132526-120.198291l0 0 0 0-66.776275-200.319857-233.718457 300.485763-66.777271-106.843036L132.261565 736.881608 499.513639 736.881608 499.513639 736.881608 499.513639 736.881608zM379.316344 309.51046c0-40.054804-33.388636-73.444436-73.453404-73.444436s-73.454401 33.389632-73.454401 73.444436c0 40.066761 33.388636 73.454401 73.454401 73.454401S379.316344 349.577221 379.316344 309.51046L379.316344 309.51046 379.316344 309.51046z"
-                    p-id="5110" fill="#333333"></path>
-                </svg>
-              </div>
 
-              <div class="pic_upload d-flex justify-content-center align-items-center ml-3">
-                <button class="btn upload_btn">上传</button>
-                <input type="file" name="file" class="pic_upload_btn" accept="image/*" hidden>
-              </div>
-            </div>
+        <!-- 主体内容 -->
+        <div class="wrapper supply_wrapper overflow-auto mt-3 mb-3 search_wrap_content">
+          <ul class="goods_ul_content overflow-auto content supply_ul search_ul_wrap">
+         
+          </ul>
+
+          <div class="d-flex justify-content-center align-items-center flex-column w-100 h-50 no_content">
+            <svg t="1607409166536" class="icon" viewBox="0 0 1576 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="6143" width="100" height="100">
+              <path
+                d="M1260.533 834.866h-134.81l9.387-15.697c6.31-11.08 9.388-23.7 9.388-37.088V168.82c0-19.698-7.849-37.858-21.237-52.016-13.389-13.388-32.318-21.237-52.016-21.237H567.093c-19.698 0-37.857 7.849-52.015 21.237-14.158 14.158-21.237 32.318-21.237 52.016v32.317h-73.253c-19.698 0-37.858 7.849-52.016 21.238-14.158 14.158-22.006 32.317-22.006 52.015v612.338c0 12.62 3.078 25.238 9.387 37.088l9.388 15.697H251.92c-5.54 0-10.31 4.77-10.31 10.31 0 2.31 0.77 5.541 3.232 7.08 1.539 1.539 4.77 3.078 7.079 3.078h533.545l54.324 54.324c5.54 5.54 14.158 9.387 22.006 9.387 7.849 0 16.62-3.078 22.007-9.387 10.31-10.311 11.85-26.008 4.77-38.627l-9.387-16.62h129.27c5.54 0 10.31-4.771 10.31-10.311s-4.77-10.311-10.31-10.311h-30.01l9.388-15.697c6.31-11.08 9.388-23.7 9.388-37.088v-32.318h263.156c5.54 0 10.31-4.77 10.31-10.31 0.154-4.156-4.616-8.157-10.156-8.157z m-283.624 52.016c0 29.086-23.7 52.785-52.785 52.785h-70.945l-73.252-74.022c-7.849-7.849-19.699-11.08-30.01-7.849l-6.309 1.54-30.778-30.78 5.54-7.078c42.628-57.556 33.856-138.657-19.699-186.056-53.554-47.245-135.579-44.167-186.055 7.079-50.477 50.476-52.786 132.347-6.31 186.825 46.475 53.555 127.73 63.096 184.363 20.468l7.08-5.54 30.778 30.778-1.54 6.31c-3.077 11.08 0 22.93 7.85 30.778l29.085 29.086H419.665c-29.086 0-52.786-23.7-52.786-52.785V273.775c0-28.317 22.93-52.016 51.247-52.016h507.537c28.316 0 51.246 23.7 51.246 52.016v613.107z m-286.086-65.404c-22.93 22.93-52.016 33.856-82.025 33.856s-59.094-11.08-82.024-33.856c-21.853-21.7-34.01-51.247-33.857-82.025 0-30.779 11.85-60.634 33.857-82.025 22.006-22.006 51.246-33.856 82.024-33.856s59.864 11.85 82.025 33.856c22.007 22.007 33.856 51.246 33.856 82.025s-11.85 60.018-33.856 82.025z m433.36-40.166c0.001 29.085-23.698 52.785-52.784 52.785h-74.022V274.544c0-19.698-7.849-37.857-21.238-52.016-13.388-13.388-32.317-21.237-52.015-21.237H514.308v-31.548c0-29.085 23.7-52.785 52.785-52.785h504.46c29.085 0 52.785 23.7 52.785 52.785v611.569zM167.436 940.436H41.397c-5.54 0-10.31 4.771-10.31 10.311 0 3.078 0.769 5.54 3.077 7.08 1.539 1.538 4.77 3.077 7.08 3.077H167.28c5.54 0 10.31-4.77 10.31-10.31s-3.846-10.158-10.156-10.158z m0 0"
+                p-id="6144" fill="#bfbfbf"></path>
+              <path
+                d="M482.76 327.33h230.993c5.54 0 10.31-4.772 10.31-10.312s-4.77-10.31-10.31-10.31H482.76c-5.54 0-10.31 4.77-10.31 10.31 0 2.309 0.77 5.54 3.078 7.08 1.692 2.462 4.77 3.231 7.232 3.231z m336.563 85.102H482.76c-5.54 0-10.31 4.77-10.31 10.31 0 3.078 0.77 5.54 3.078 7.08 1.538 1.538 4.77 3.077 7.079 3.077h336.562c5.54 0 10.311-4.77 10.311-10.31 0-5.387-4.77-10.157-10.157-10.157z m-189.288 105.57H482.607c-5.54 0-10.311 4.77-10.311 10.31 0 3.078 0.77 5.54 3.078 7.08 1.539 1.539 4.77 3.077 7.079 3.077h147.429c5.54 0 10.31-4.77 10.31-10.31s-4.616-10.157-10.157-10.157zM157.278 707.905h21.237c5.54 0 10.311 4.77 10.311 10.31s-4.77 10.312-10.31 10.312h-21.238v21.237c0 5.54-4.77 10.31-10.31 10.31-3.079 0-5.54-0.769-7.08-3.077-2.308-1.54-3.078-4.771-3.078-7.08V728.68h-21.39c-5.54 0-10.311-4.77-10.311-10.31s4.77-10.311 10.31-10.311h21.237v-21.237c0-5.54 4.771-10.311 10.311-10.311s10.311 4.77 10.311 10.31v21.084z m1387.032-85.102v-21.238c0-3.231-0.77-5.54-3.078-7.079-2.308-1.539-4.77-3.078-7.079-3.078-5.54 0-10.31 4.771-10.31 10.311v21.237h-21.238c-3.077 0-5.54 0.77-7.079 3.232-1.539 2.309-3.231 4.77-3.231 7.08 0 5.54 4.77 10.31 10.31 10.31h21.238v21.237c0 5.54 4.77 10.31 10.31 10.31s10.311-4.77 10.311-10.31V643.27h21.237c5.54 0 10.311-4.77 10.311-10.31s-4.77-10.311-10.31-10.311h-21.392zM267.62 47.553h31.548c8.618 0 15.697 7.079 15.697 15.697s-7.08 15.697-15.697 15.697h-31.548v31.548c0 8.618-7.08 15.697-15.697 15.697-4.001 0-7.849-1.54-11.08-4.77-3.078-2.31-4.771-6.31-4.771-11.081V79.1h-31.548c-4.001 0-7.849-1.54-11.08-4.771-3.078-2.308-4.77-6.31-4.77-11.08 0-8.618 7.078-15.697 15.696-15.697h31.548V16.005c0-8.618 7.08-15.697 15.697-15.697s15.697 7.079 15.697 15.697v31.548zM62.634 274.544c-22.93 0-43.397 11.85-54.324 31.548-11.08 19.698-11.08 44.167 0 63.096 11.08 19.698 32.318 31.548 54.324 31.548 34.626 0 63.096-28.316 63.096-63.096s-28.47-63.096-63.096-63.096z m27.547 79.562c-5.54 9.388-15.697 15.697-27.547 15.697-17.39 0-31.548-14.158-31.548-31.548s14.158-31.547 31.548-31.547c11.08 0 21.237 6.31 27.547 15.697 5.54 9.695 5.54 21.39 0 31.701z m1275.306-205.754c-22.93 0-43.397 11.85-54.324 31.548-11.08 19.698-11.08 44.167 0 63.096 11.08 19.698 32.318 31.548 54.324 31.548 34.626 0 63.096-28.316 63.096-63.096-0.154-34.626-27.7-63.096-63.096-63.096z m27.547 78.793c-5.54 9.388-15.697 15.697-27.547 15.697-17.39 0-31.548-14.158-31.548-31.548s14.158-31.548 31.548-31.548c11.08 0 22.007 6.31 27.547 15.697 5.54 9.696 5.54 22.315 0 31.702z m0 0"
+                p-id="6145" fill="#bfbfbf"></path>
+            </svg>
+            <p class="d-flex justify-content-center align-items-center" style="color: #bfbfbf">什么都没搜到，你气不气</p>
           </div>
-
-          <!-- 用户名 -->
-          <div class="form-group d-flex  align-items-center mt-5">
-            <label for="username" class="mb-0">用户名</label>
-            <span class="username ml-4">在逃的沸沸</span>
-          </div>
-
-          <!-- 性别 -->
-          <div class="form-group d-flex  align-items-center mt-5">
-            <label for="sex" class="mb-0">性别</label>
-            <div class="ml-4 d-flex align-items-center">
-              <label class="radio-inline ml-3"><input type="radio" name="sex" class="mr-2">男</label>
-              <label class="radio-inline ml-3"><input type="radio" class="mr-2" name="sex">女</label>
-            </div>
-          </div>
-
-          <!-- 个人说明 -->
-          <div class="form-group d-flex justify-content-between align-items-center mt-5">
-            <label for="desc">个人说明</label>
-            <input type="text" class="form-control" id="desc">
-          </div>
-
-          <!-- 联系地址 -->
-          <div class="form-group d-flex justify-content-between align-items-center mt-5">
-            <label for="">联系地址</label>
-            <div class="loca">
-              <select class="select_wrap_location" id="p_province" name="p_province"></select>  
-              <select id="p_city" name="p_city" class="select_wrap_location"></select>  
-              <select id="p_county" name="p_county" class="select_wrap_location"></select>
-            </div>
-          </div>
-
-
-
-          <button type="submit" class="btn submit_btn text-white mt-3">确认修改</button>
-        </form>
-      </div>
-      <!-- 右边的条目 -->
-      <div class="right_item shadow-sm bg-white">
-        <div class="right_header text-center text-white">平台公告</div>
-
-        <!-- 公告内容 -->
-        <ul class="bulletin_board_ul pl-3 pr-3">
-          <li class="bulletin_li pt-4 pb-4">
-            <a class="text-decoration-none" href="">
-              <div class="title">恭祝Discuz！发布</div>
-              <div class="desc text-truncate mt-2">
-                摘要：昨日，小编在Discuz！官方中发现了哆啦A梦
-              </div>
-            </a>
-          </li>
-          <li class="bulletin_li pt-4 pb-4">
-            <a class="text-decoration-none" href="">
-              <div class="title">建站行业知识产权意识</div>
-              <div class="desc text-truncate mt-2">
-                摘要：昨日，小编在Discuz！官方中发现了哆啦A梦
-              </div>
-            </a>
-          </li>
-          <li class="bulletin_li pt-4 pb-4">
-            <a class="text-decoration-none" href="">
-              <div class="title">建站行业知识产权意识</div>
-              <div class="desc text-truncate mt-2">
-                摘要：昨日，小编在Discuz！官方中发现了哆啦A梦
-              </div>
-            </a>
-          </li>
-          <li class="bulletin_li pt-4 pb-4">
-            <a class="text-decoration-none" href="">
-              <div class="title">建站行业知识产权意识</div>
-              <div class="desc text-truncate mt-2">
-                摘要：昨日，小编在Discuz！官方中发现了哆啦A梦
-              </div>
-            </a>
-          </li>
-        </ul>
-
-        <!-- 全部分类 -->
-        <div class="bottom_class text-center">
-          <a class="text-decoration-none " href="">全部分类</a>
         </div>
       </div>
-
     </div>
   </section>
-  <!-- 中间主体end -->
+  <!-- 供应需求主体end -->
+
+  <!-- 下部广告位begin -->
+  <section>
+    <div class="container bottom_adver mt-4 mb-4">
+      <div class="row flex-nowrap justify-content-between">
+        <div class="img_wrap_bottom">
+          <img data-funlazy="" alt="">
+        </div>
+        <div class="img_wrap_bottom">
+          <img data-funlazy="" alt="">
+        </div>
+        <div class="img_wrap_bottom">
+          <img data-funlazy="" alt="">
+        </div>
+        <div class="img_wrap_bottom">
+          <img data-funlazy="" alt="">
+        </div>
+        <div class="img_wrap_bottom">
+          <img data-funlazy="" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 下部广告位end -->
+
+  <!-- 友情链接begin -->
+  <section>
+    <div class="container link_tip mb-3">
+      <div class="row flex-nowrap align-items-center">
+        <h5 class="mb-0">友情链接</h5>
+        <ol class="breadcrumb bg-white mb-0">
+          <li class="breadcrumb-item"><a href="#">百度网盘</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">加盟网</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">做网站</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">禹城吧</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">挖掘机</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">供求</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">百度</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">轮式挖掘机</a></li>
+          <li class="breadcrumb-item"><a href="#" class="active">更多 ></a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <!-- 友情链接end -->
 
   <!-- 脚部begin -->
-  <footer class="footer">
+  <footer>
     <div class="footer_top row flex-nowrap container-fluid ml-0 justify-content-center align-items-center">
       供需平台网郑重提醒：商务洽谈过程请小心谨慎，认真核实对方信息，谨防欺诈。
     </div>
@@ -707,36 +603,30 @@
 </div>
 
 <script src="./js/common.min.js"></script>
-<script>
-  // 上传图片
-  $('.upload_btn').click(function (event) {
-    event.preventDefault();
-    // 判断上传三次不能再上传
-    if ($('.pic_wrap').find('img').length == 3) {
-      layer.msg('亲，不能在添加了！', {
-        icon: 2,
-        time: 2000 //2秒关闭（如果不配置，默认是3秒）
-      });
-    } else {
-      $('.pic_upload_btn').click()
-    }
-  })
+<script src="./js/index.min.js"></script>
 
-  // 增加图片
-  function addImg(url) {
-    $('.pic_wrap').html(`
-        <img src="${url}" alt="">`)
+<script>
+  // 模板
+  function addTemplateData(el, data) {
+    let dataHtml = template(el, {
+      dataList: data
+    })
+    $('.search_ul_wrap').append(dataHtml)
+    lazyPic()
   }
 
-  // 文件上传事件
-  $('.pic_upload_btn').change(function (e) {
-    addImg('./images/goods1.png')
-  })
+  // 图片懒加载
+  function lazyPic() {
+    FunLazy({
+      onSuccess: function (el, img) {
+        searchWrapper.refresh()
+      }
+    })
+  }
 
   // 初始化位置
   function initArea() {
     _init_area(["s_province", "s_city", "s_county"])
-
     changeLocation()
   }
 
@@ -778,8 +668,6 @@
     ll.getLoaction(function (res) {
       let { ad_info } = res.result
       $('.header_lo_text').text(ad_info.city)
-      // $('#p_province').val(ad_info.city)
-
     })
   }
 
@@ -788,28 +676,45 @@
 
   // 初始化位置
   initArea()
+  // 图片懒加载初始化
+  lazyPic()
 
-  // 单独拿出来，第一个参数为数组，表示定义的id数组；第二个参数也是一个数组：['省份', '城级市', '县区']，表示显示初始化的字符串 ，联系地址表示
-  _init_area(["p_province", "p_city", "p_county"])
+  // 供应滚动
+  let searchWrapper = new Dropload({
+    el: '.search_wrap_content',
+    distanceEnd: 500,
+    success: function () {
+      topbar.show()
+      setTimeout(function () {
+        let dataneed = [{}, {}, {}, {}, {}, {}, {}]
+        let datasupply = [{}, {}, {}, {}, {}, {}, {}]
+        addTemplateData('search_need_temp', dataneed)
+        addTemplateData('search_supply_temp', datasupply)
 
-</script>
-
-<script>
-  function changeFooter() {
-    let wh = $(window).height()
-    let contentH = $('.body').height()
-    if (contentH <= wh) {
-      $('.footer').addClass('footer_fixed')
-    } else {
-      $('.footer').removeClass('footer_fixed')
+        topbar.hide()
+      }, 1000)
     }
-  }
-  setTimeout(function () {
-    changeFooter()
-  }, 0)
+  })
 
-  $(window).resize(function () {
-    changeFooter()
+  // 搜索内容
+  $('.search_icon').click(function () {
+    let queryString = $(this).siblings('input').val()
+    console.log(queryString);
+    topbar.show()
+    // 发送请求
+    setTimeout(function () {
+      let data = { "need": [{}, {}, {}, {}, {}, {}, {}], "supply": [{}, {}, {}, {}, {}, {}, {}] }
+      // 只要有一个不为空
+      if (data.need.length || data.supply.length) {
+        $('.no_content').hide()
+        addTemplateData('search_need_temp', data.need)
+        addTemplateData('search_supply_temp', data.supply)
+        topbar.hide()
+      } else {
+        $('.no_content').show()
+        topbar.hide()
+      }
+    }, 1000)
   })
 </script>
 
@@ -916,4 +821,5 @@
   })
 
 </script>
+
 </html>

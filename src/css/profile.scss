@@ -35,6 +35,20 @@ body {
           font-weight: normal;
           letter-spacing: 2px;
         }
+
+        &:hover {
+          background: #319595;
+
+          svg {
+            path {
+              fill: #ffffff;
+            }
+          }
+
+          .text_icon {
+            color: #ffffff;
+          }
+        }
       }
 
       .active {

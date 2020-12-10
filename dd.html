@@ -1,0 +1,154 @@
+<!--
+ * @Author: liweilong
+ * @Date: 2020-12-04 13:21:16
+-->
+<!-- 选择位置 -->
+<div class="location_change_wrap shadow-sm supply_location_wrap">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="s_province" name="s_province"></select>  
+      <select id="s_city" name="s_city"></select>  
+      <select id="s_county" name="s_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_locat">切换</btn>
+  </div>
+</div>
+
+<!-- 需求 -->
+<div class="location_change_wrap shadow-sm location_change_need">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="n_province" name="n_province"></select>  
+      <select id="n_city" name="n_city"></select>  
+      <select id="n_county" name="n_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_need">切换need</btn>
+  </div>
+</div>
+
+<!-- 顶部 -->
+<div class="location_change_wrap shadow-sm location_change_top">
+  <div class="info d-flex align-items-center justify-content-center h-100 w-100">
+    <div>
+      <select id="t_province" name="t_province"></select>  
+      <select id="t_city" name="t_city"></select>  
+      <select id="t_county" name="t_county"></select>
+    </div>
+    <btn type="button" class="btn btn-primary btn-sm ml-2" id="change_top_btn">切换顶部</btn>
+  </div>
+</div>
+
+
+<script>
+  // 初始化位置
+  function initArea() {
+    _init_area(["s_province", "s_city", "s_county"])
+    _init_area(["n_province", "n_city", "n_county"])
+    _init_area(["t_province", "t_city", "t_county"])
+
+    changeLocation()
+    changeLocationneed()
+    changeLocationTop()
+  }
+
+  // 位置选择方法
+  function changeLocation() {
+    // 点击显示切换的位置选择
+    $('#supply_change_btn').click(function (e) {
+      console.log(e);
+      console.log(e.clientX);
+      console.log(e.clientY);
+      // let top = `${e.clientY + 30}px`
+      let top = e.clientY + 30 + 'px'
+      // let left = `${e.clientX - 250}px`
+      let left = e.clientX - 250 + 'px'
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.supply_location_wrap'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      // alert(getpro + " " + getcity + " " + getarea);
+      filterUndefined([getpro,getcity,getarea], '#supply_location_text')
+    })
+  }
+
+  function filterUndefined(arry, el) {
+
+  }
+
+  // need位置选择方法
+  function changeLocationneed() {
+    // 点击显示切换的位置选择
+    $('#need_change_btn').click(function (e) {
+      console.log(e);
+
+      // let top = `${e.clientY + 30}px`
+      let top = e.clientY + 30 + 'px'
+      // let left = `${e.clientX - 250}px`
+      let left = e.clientX - 250 + 'px'
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.location_change_need'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      alert(getpro + " " + getcity + " " + getarea);
+    })
+  }
+
+  // 顶部位置选这方法
+  function changeLocationTop() {
+    // 点击显示切换的位置选择
+    $('#top_change_btn').click(function (e) {
+      console.log(e);
+
+      // let top = `${e.clientY + 30}px`
+      let top = e.clientY + 30 + 'px'
+      // let left = `${e.clientX - 250}px`
+      let left = e.clientX - 250 + 'px'
+      layer.open({
+        type: 1,
+        shade: false,
+        title: false, //不显示标题
+        area: ['430px', '100px'],
+        offset: [top, left],
+        content: $('.location_change_top'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        cancel: function () {
+
+        }
+      });
+    })
+    // 确定输出地址
+    $('#change_locat').click(function () {
+      var getpro = document.getElementById("s_province").value;
+      var getcity = document.getElementById("s_city").value;
+      var getarea = document.getElementById("s_county").value;
+      alert(getpro + " " + getcity + " " + getarea);
+    })
+  }
+
+
+</script>

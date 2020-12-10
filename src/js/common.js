@@ -15,11 +15,13 @@ class Common {
       this.listanBaner()
     }
     if (this.proUl.length) {
-      this.listenProfileUlLi()
+      // this.listenProfileUlLi()
     }
     this.listenBackTop()
     this.topConfig()
   }
+
+  
 
   // 登录注册
   listanBaner() {
@@ -183,8 +185,13 @@ function checkTextNumber(el, cb) {
     }
     timer = setTimeout(() => {
       let text = $(this).val()
-      let hang = Math.floor((text.length)/30)
-      $(el).css({'height': 60 + hang * 30 + 'px'})
+      let hang = Math.floor((text.length) / 30)
+      $(el).attr('title', text)
+      if (el === '#desc') {
+        $(el).css({
+          'height': 60 + hang * 30 + 'px'
+        })
+      }
       cb(text.length)
     }, 300)
   })

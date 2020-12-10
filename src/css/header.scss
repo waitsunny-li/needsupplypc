@@ -11,6 +11,22 @@ body {
   font-family: Microsoft YaHei;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $htmlColor;
+}
+
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 10px;
+  background: #EEEEEE;
+}
+
 .container {
   max-width: 1200px !important;
   width: 1200px;
